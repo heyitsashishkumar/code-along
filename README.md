@@ -12,7 +12,11 @@ Today that's **LWC from Zero: Code Along**. Lightning Web Components are taught 
 | 2 | Set up everything, free: your org, VS Code, the Salesforce CLI, Java, the Extension Pack, and the `customer-desk` project | [lwc/02-setup](lwc/02-setup/) |
 | 3 | Your first component, on a real Salesforce page: `customerCard`, exposed, deployed and placed with Lightning App Builder | [lwc/03-first-component](lwc/03-first-component/) |
 
-More folders are added as the videos come out.
+More folders are added as the videos come out. From video 14 (`lwc/14-record-forms`) on, the components work with records. So every folder from 14 onward also has a `data/` folder with Sharma Traders' made-up customers, companies and deals (standard Account, Contact and Opportunity records). Load them into your org once with:
+
+```bash
+sf data import tree --plan data/plan.json
+```
 
 ## How to use it with the playlist
 
