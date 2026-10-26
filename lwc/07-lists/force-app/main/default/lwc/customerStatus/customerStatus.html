@@ -1,0 +1,12 @@
+<template>
+    <lightning-input type="number" label="Orders this year" value={orderCount} onchange={handleOrderCountChange}></lightning-input>
+    <template lwc:if={isNewCustomer}>
+        <p>New customer: offer a welcome discount.</p>
+    </template>
+    <template lwc:elseif={isRegularCustomer}>
+        <p>Regular customer: thank them for coming back.</p>
+    </template>
+    <template lwc:else>
+        <p>Top customer: call them first when new stock arrives.</p>
+    </template>
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <p>All products</p>
+    <ul>
+        <template for:each={products} for:item="product">
+            <li key={product.id}>{product.name}: ₹{product.price}</li>
+        </template>
+    </ul>
+    <p>In stock today</p>
+    <ul>
+        <template iterator:it={inStockProducts}>
+            <li key={it.value.id}>
+                <template lwc:if={it.first}>Best seller: </template>
+                {it.value.label}
+                <template lwc:if={it.last}> (last on the list)</template>
+            </li>
+        </template>
+    </ul>
+</template>
