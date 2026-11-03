@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Customers" icon-name="standard:contact">
+        <div class="slds-p-horizontal_small" onselect={handleSelect}>
+            <template for:each={contacts} for:item="contact">
+                <c-contact-tile key={contact.Id} contact={contact}></c-contact-tile>
+            </template>
+            <template lwc:if={selectedContact}>
+                <p class="selected slds-m-top_small">Selected: {selectedContact.Name}, {selectedContact.Phone}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

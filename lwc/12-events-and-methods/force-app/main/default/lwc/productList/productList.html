@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Products" icon-name="standard:product">
+        <div class="slds-p-horizontal_small">
+            <p class="slds-text-title_caps">All products</p>
+            <ul class="slds-m-bottom_small">
+                <template for:each={products} for:item="product">
+                    <li key={product.id}>{product.name}: <span class="price">₹{product.price}</span></li>
+                </template>
+            </ul>
+            <p class="slds-text-title_caps">In stock today</p>
+            <ul>
+                <template iterator:it={inStockProducts}>
+                    <li key={it.value.id}>
+                        <template lwc:if={it.first}><span class="badge slds-m-right_x-small">Best seller</span></template>
+                        {it.value.label}
+                        <template lwc:if={it.last}> (last on the list)</template>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+</template>

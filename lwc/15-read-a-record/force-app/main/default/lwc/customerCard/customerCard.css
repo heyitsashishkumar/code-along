@@ -1,0 +1,7 @@
+:host {
+    --slds-c-card-color-background: #fff8ee;
+}
+
+.company {
+    font-weight: bold;
+}

@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Customers" icon-name="standard:contact">
+        <div class="slds-p-horizontal_small">
+            <template for:each={contacts} for:item="contact">
+                <c-contact-tile key={contact.Id} contact={contact}></c-contact-tile>
+            </template>
+        </div>
+    </lightning-card>
+</template>

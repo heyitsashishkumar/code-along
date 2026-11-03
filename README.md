@@ -17,6 +17,16 @@ Today that's two companion playlists that build **Sharma Traders' customer desk*
 | 5 | Calculated values with getters: `customerName`, `get fullName()`, and template literals | [lwc/05-getters](lwc/05-getters/) |
 | 6 | Show or hide parts of the page: `customerStatus`, `lwc:if`, `lwc:elseif`, `lwc:else`, and `Number(event.target.value)` | [lwc/06-conditional](lwc/06-conditional/) |
 | 7 | Lists: `productList`, `for:each`, `for:item`, `key`, `iterator:it`, `filter` and `map` | [lwc/07-lists](lwc/07-lists/) |
+| 8 | Make it look like Salesforce: `lightning-card`, SLDS spacing & typography classes, `.css` files, and `:host` styling hooks | [lwc/08-look-like-salesforce](lwc/08-look-like-salesforce/) |
+| 9 | Put one component inside another (composition): `customerDesk` holding `<c-customer-card>` and `<c-customer-greeting>`, kebab-case tags, and `<isExposed>` | [lwc/09-composition](lwc/09-composition/) |
+| 10 | Pass data down (parent to child): `contactTile` (`@api contact`) repeated inside `contactList` | [lwc/10-parent-to-child](lwc/10-parent-to-child/) |
+| 11 | Send a message up (child to parent): `new CustomEvent('select', { detail })`, `this.dispatchEvent`, and `onselect={handleSelect}` | [lwc/11-child-to-parent](lwc/11-child-to-parent/) |
+| 12 | Event bubbling, `@api` setters, and calling a child method: `bubbles: true`, `@api get contact()` / `set contact(value)` initials badge, `@api clearSelection()`, and `lwc:ref` (`this.refs`) | [lwc/12-events-and-methods](lwc/12-events-and-methods/) |
+| 13 | Build a working contact search (Part 1 capstone): `contactSearch` with 300 ms debounced `setTimeout`, case-insensitive filtering, and `<c-contact-tile>` selection | [lwc/13-contact-search](lwc/13-contact-search/) |
+| 14 | Show and edit real Salesforce records: `customerForm` on a Contact record page (`lightning__RecordPage`, `@api recordId`, and `lightning-record-form`) | [lwc/14-record-forms](lwc/14-record-forms/) |
+| 15 | Read a record into your own HTML: `customerSummary` with `@wire(getRecord, ...)`, `@salesforce/schema/Contact.*` imports, `'$recordId'`, and `getFieldValue` | [lwc/15-read-a-record](lwc/15-read-a-record/) |
+| 16 | Create, update and delete a record from your own buttons: `newCustomer` (`createRecord`, `updateRecord`, `deleteRecord`, `ShowToastEvent`), `ldsUtils` (`reduceErrors`), and `errorPanel` | [lwc/16-create-update-delete](lwc/16-create-update-delete/) |
+| 17 | Picklists and object info without hardcoding: `leadSourcePicker` chaining `@wire(getObjectInfo)` into `@wire(getPicklistValues)` with `'$objectInfo.data.defaultRecordTypeId'` | [lwc/17-picklists](lwc/17-picklists/) |
 
 ## Apex from Zero (`apex/`)
 
@@ -27,6 +37,16 @@ Today that's two companion playlists that build **Sharma Traders' customer desk*
 | 3 | Your first Apex class and method: `DeskGreeter.cls`, `public with sharing`, `public static String greet(String customerName)` | [apex/03-first-class](apex/03-first-class/) |
 | 4 | Variables, types, dates, and `null`: `DealCalculator.cls` (18% GST with `Decimal`, festival discounts with `Boolean`, follow-up `Date.today().addDays(30)`, and safe navigation `?.`) | [apex/04-variables-and-types](apex/04-variables-and-types/) |
 | 5 | Lists and loops: `DealFilter.cls` (`List<Decimal>`, `.add()`, `.sort()`, `for (Decimal amount : amounts)`, filtering high-value deals and summing totals) | [apex/05-lists-and-loops](apex/05-lists-and-loops/) |
+| 6 | Sets and Maps (instant lookup by key): `CityDirectory.cls` (`Set<String>`, `Map<String, String>`, `.containsKey()`, `.get()`) | [apex/06-sets-and-maps](apex/06-sets-and-maps/) |
+| 7 | SObjects and DML (`insert`, `update`, `delete` in bulk): `CustomerOnboarding.cls` creating, updating, and cleaning up `Account` and `Contact` records with one DML statement per list | [apex/07-sobjects-and-dml](apex/07-sobjects-and-dml/) |
+| 8 | Partial saves and handling DML errors: `Database.insert(contacts, false)`, `Database.SaveResult`, `Database.Error`, and `try` / `catch (DmlException e)` | [apex/08-database-methods](apex/08-database-methods/) |
+| 9 | Read records with SOQL (`WHERE`, `:bind`, `ORDER BY`, `LIMIT`): `CustomerQueries.cls` (`getContactsByCity` and `getTopContacts`) | [apex/09-soql-basics](apex/09-soql-basics/) |
+| 10 | Query related records and totals in SOQL: child-to-parent `Account.Name`, parent-to-child `(SELECT ... FROM Contacts)`, and `SUM(Amount)` with `AggregateResult` | [apex/10-soql-relationships](apex/10-soql-relationships/) |
+| 11 | Keep every query and save safe (`with sharing` and `WITH USER_MODE`): upgrading `CustomerQueries` and `CustomerOnboarding` to enforce object, field, and sharing rules | [apex/11-security-and-user-mode](apex/11-security-and-user-mode/) |
+| 12 | Expose Apex to LWC (`@AuraEnabled` and `ContactController`): `@AuraEnabled(cacheable=true)` (`getContactList` and `findContacts` for `@wire` in LWC #18–#19) and `AuraHandledException` | [apex/12-contact-controller](apex/12-contact-controller/) |
+| 13 | Write data from LWC (`DealController`): `getDealsForContact`, `createFollowUpDeal`, and `markDealWon` for imperative Apex calls and `refreshApex` in LWC #20–#21 | [apex/13-deal-controller](apex/13-deal-controller/) |
+| 14 | Test your Apex (`@IsTest`, `@TestSetup`, and `Assert`): `ContactControllerTest.cls` with positive, negative, and `AuraHandledException` tests | [apex/14-contact-controller-test](apex/14-contact-controller-test/) |
+| 15 | Test DML, exceptions, and permissions (`System.runAs`): `DealControllerTest.cls` testing `createFollowUpDeal`, `markDealWon`, validation errors, and Standard User access | [apex/15-deal-controller-test](apex/15-deal-controller-test/) |
 
 More folders are added as the videos come out. When the videos work with records, each folder also includes a `data/` folder with Sharma Traders' made-up customers, companies and deals (standard Account, Contact and Opportunity records). Load them into your org once with:
 

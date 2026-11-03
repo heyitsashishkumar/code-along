@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="How did they find us?" icon-name="standard:picklist_type">
+        <div class="slds-p-horizontal_small">
+            <lightning-combobox
+                label={label}
+                options={options}
+                value={value}
+                placeholder="Pick one"
+                onchange={handleChange}
+            ></lightning-combobox>
+            <template lwc:if={value}>
+                <p class="picked slds-m-top_small">You picked: {value}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,116 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "VermaRef"
+      },
+      "Name": "Verma Logistics",
+      "Type": "Customer - Direct",
+      "Industry": "Transportation",
+      "Phone": "+91 90000 00101",
+      "BillingCity": "Noida",
+      "BillingState": "Uttar Pradesh",
+      "BillingCountry": "India",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business."
+    },
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "GuptaRef"
+      },
+      "Name": "Gupta Stores",
+      "Type": "Customer - Direct",
+      "Industry": "Retail",
+      "Phone": "+91 90000 00102",
+      "BillingCity": "Greater Noida",
+      "BillingState": "Uttar Pradesh",
+      "BillingCountry": "India",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business."
+    },
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "IyerRef"
+      },
+      "Name": "Iyer Textiles",
+      "Type": "Customer - Direct",
+      "Industry": "Apparel",
+      "Phone": "+91 90000 00103",
+      "BillingCity": "Coimbatore",
+      "BillingState": "Tamil Nadu",
+      "BillingCountry": "India",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business."
+    },
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "KhanRef"
+      },
+      "Name": "Khan Electricals",
+      "Type": "Customer - Direct",
+      "Industry": "Electronics",
+      "Phone": "+91 90000 00104",
+      "BillingCity": "Lucknow",
+      "BillingState": "Uttar Pradesh",
+      "BillingCountry": "India",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business."
+    },
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "DasRef"
+      },
+      "Name": "Das Sweets",
+      "Type": "Customer - Direct",
+      "Industry": "Food & Beverage",
+      "Phone": "+91 90000 00105",
+      "BillingCity": "Kolkata",
+      "BillingState": "West Bengal",
+      "BillingCountry": "India",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business."
+    },
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "PatelRef"
+      },
+      "Name": "Patel Hardware",
+      "Type": "Customer - Direct",
+      "Industry": "Construction",
+      "Phone": "+91 90000 00106",
+      "BillingCity": "Ahmedabad",
+      "BillingState": "Gujarat",
+      "BillingCountry": "India",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business."
+    },
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "ReddyRef"
+      },
+      "Name": "Reddy Pharma",
+      "Type": "Customer - Direct",
+      "Industry": "Healthcare",
+      "Phone": "+91 90000 00107",
+      "BillingCity": "Hyderabad",
+      "BillingState": "Telangana",
+      "BillingCountry": "India",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business."
+    },
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "SinghRef"
+      },
+      "Name": "Singh Motors",
+      "Type": "Customer - Direct",
+      "Industry": "Machinery",
+      "Phone": "+91 90000 00108",
+      "BillingCity": "Ludhiana",
+      "BillingState": "Punjab",
+      "BillingCountry": "India",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business."
+    }
+  ]
+}

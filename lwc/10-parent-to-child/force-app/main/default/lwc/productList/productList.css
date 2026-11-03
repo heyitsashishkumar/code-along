@@ -1,0 +1,10 @@
+.price {
+    font-weight: bold;
+}
+
+.badge {
+    background: #2e844a;
+    color: white;
+    border-radius: 4px;
+    padding: 0 4px;
+}
