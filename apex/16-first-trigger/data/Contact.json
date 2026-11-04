@@ -1,0 +1,260 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "RaviVermaRef"
+      },
+      "FirstName": "Ravi",
+      "LastName": "Verma",
+      "Title": "Owner",
+      "Email": "ravi.verma@example.com",
+      "Phone": "+91 90000 00109",
+      "MailingCity": "Noida",
+      "MailingCountry": "India",
+      "LeadSource": "Web",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@VermaRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "PoojaVermaRef"
+      },
+      "FirstName": "Pooja",
+      "LastName": "Verma",
+      "Title": "Accounts Manager",
+      "Email": "pooja.verma@example.com",
+      "Phone": "+91 90000 00110",
+      "MailingCity": "Noida",
+      "MailingCountry": "India",
+      "LeadSource": "Phone Inquiry",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@VermaRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "RakeshGuptaRef"
+      },
+      "FirstName": "Rakesh",
+      "LastName": "Gupta",
+      "Title": "Owner",
+      "Email": "rakesh.gupta@example.com",
+      "Phone": "+91 90000 00111",
+      "MailingCity": "Greater Noida",
+      "MailingCountry": "India",
+      "LeadSource": "Partner Referral",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@GuptaRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "NehaGuptaRef"
+      },
+      "FirstName": "Neha",
+      "LastName": "Gupta",
+      "Title": "Purchase Manager",
+      "Email": "neha.gupta@example.com",
+      "Phone": "+91 90000 00112",
+      "MailingCity": "Greater Noida",
+      "MailingCountry": "India",
+      "LeadSource": "Web",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@GuptaRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "LakshmiIyerRef"
+      },
+      "FirstName": "Lakshmi",
+      "LastName": "Iyer",
+      "Title": "Managing Director",
+      "Email": "lakshmi.iyer@example.com",
+      "Phone": "+91 90000 00113",
+      "MailingCity": "Coimbatore",
+      "MailingCountry": "India",
+      "LeadSource": "Partner Referral",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@IyerRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "KarthikIyerRef"
+      },
+      "FirstName": "Karthik",
+      "LastName": "Iyer",
+      "Title": "Store Manager",
+      "Email": "karthik.iyer@example.com",
+      "Phone": "+91 90000 00114",
+      "MailingCity": "Coimbatore",
+      "MailingCountry": "India",
+      "LeadSource": "Other",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@IyerRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "ZubairKhanRef"
+      },
+      "FirstName": "Zubair",
+      "LastName": "Khan",
+      "Title": "Owner",
+      "Email": "zubair.khan@example.com",
+      "Phone": "+91 90000 00115",
+      "MailingCity": "Lucknow",
+      "MailingCountry": "India",
+      "LeadSource": "Phone Inquiry",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@KhanRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "NaziaKhanRef"
+      },
+      "FirstName": "Nazia",
+      "LastName": "Khan",
+      "Title": "Accounts Manager",
+      "Email": "nazia.khan@example.com",
+      "Phone": "+91 90000 00116",
+      "MailingCity": "Lucknow",
+      "MailingCountry": "India",
+      "LeadSource": "Web",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@KhanRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "RaniDasRef"
+      },
+      "FirstName": "Rani",
+      "LastName": "Das",
+      "Title": "Owner",
+      "Email": "rani.das@example.com",
+      "Phone": "+91 90000 00117",
+      "MailingCity": "Kolkata",
+      "MailingCountry": "India",
+      "LeadSource": "Web",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@DasRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "AnanyaDasRef"
+      },
+      "FirstName": "Ananya",
+      "LastName": "Das",
+      "Title": "Purchase Manager",
+      "Email": "ananya.das@example.com",
+      "Phone": "+91 90000 00118",
+      "MailingCity": "Kolkata",
+      "MailingCountry": "India",
+      "LeadSource": "Other",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@DasRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "KiranPatelRef"
+      },
+      "FirstName": "Kiran",
+      "LastName": "Patel",
+      "Title": "Owner",
+      "Email": "kiran.patel@example.com",
+      "Phone": "+91 90000 00119",
+      "MailingCity": "Ahmedabad",
+      "MailingCountry": "India",
+      "LeadSource": "Partner Referral",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@PatelRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "MehulPatelRef"
+      },
+      "FirstName": "Mehul",
+      "LastName": "Patel",
+      "Title": "Site Engineer",
+      "Email": "mehul.patel@example.com",
+      "Phone": "+91 90000 00120",
+      "MailingCity": "Ahmedabad",
+      "MailingCountry": "India",
+      "LeadSource": "Phone Inquiry",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@PatelRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "SureshReddyRef"
+      },
+      "FirstName": "Suresh",
+      "LastName": "Reddy",
+      "Title": "Managing Director",
+      "Email": "suresh.reddy@example.com",
+      "Phone": "+91 90000 00121",
+      "MailingCity": "Hyderabad",
+      "MailingCountry": "India",
+      "LeadSource": "Web",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@ReddyRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "DivyaReddyRef"
+      },
+      "FirstName": "Divya",
+      "LastName": "Reddy",
+      "Title": "Purchase Manager",
+      "Email": "divya.reddy@example.com",
+      "Phone": "+91 90000 00122",
+      "MailingCity": "Hyderabad",
+      "MailingCountry": "India",
+      "LeadSource": "Partner Referral",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@ReddyRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "HarpreetSinghRef"
+      },
+      "FirstName": "Harpreet",
+      "LastName": "Singh",
+      "Title": "Owner",
+      "Email": "harpreet.singh@example.com",
+      "Phone": "+91 90000 00123",
+      "MailingCity": "Ludhiana",
+      "MailingCountry": "India",
+      "LeadSource": "Phone Inquiry",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@SinghRef"
+    },
+    {
+      "attributes": {
+        "type": "Contact",
+        "referenceId": "SimranKaurRef"
+      },
+      "FirstName": "Simran",
+      "LastName": "Kaur",
+      "Title": "Accounts Manager",
+      "Email": "simran.kaur@example.com",
+      "Phone": "+91 90000 00124",
+      "MailingCity": "Ludhiana",
+      "MailingCountry": "India",
+      "LeadSource": "Web",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@SinghRef"
+    }
+  ]
+}

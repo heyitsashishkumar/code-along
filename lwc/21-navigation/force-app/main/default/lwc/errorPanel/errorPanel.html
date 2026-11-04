@@ -1,0 +1,9 @@
+<template>
+    <template lwc:if={messages.length}>
+        <div class="slds-text-color_error slds-m-top_small">
+            <template for:each={messages} for:item="message">
+                <p key={message}>{message}</p>
+            </template>
+        </div>
+    </template>
+</template>

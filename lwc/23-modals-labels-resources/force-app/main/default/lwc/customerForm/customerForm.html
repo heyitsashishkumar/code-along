@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Customer details" icon-name="standard:contact">
+        <div class="slds-p-horizontal_small">
+            <template lwc:if={contactId}>
+                <lightning-record-form
+                    record-id={contactId}
+                    object-api-name="Contact"
+                    fields={fields}
+                    columns="2"
+                    mode="view"
+                ></lightning-record-form>
+            </template>
+            <template lwc:else>
+                <p class="hint">Pick a customer to see their details.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

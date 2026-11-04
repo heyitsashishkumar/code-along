@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Customers" icon-name="standard:contact">
+        <lightning-button slot="actions" label="Refresh" onclick={handleRefresh}></lightning-button>
+        <div class="slds-p-horizontal_small" onselect={handleSelect}>
+            <template for:each={contacts} for:item="contact">
+                <c-contact-tile key={contact.Id} contact={contact}></c-contact-tile>
+            </template>
+            <template lwc:if={selectedContact}>
+                <p class="selected slds-m-top_small">Selected: {selectedContact.Name}, {selectedContact.Phone}</p>
+            </template>
+            <c-error-panel errors={error}></c-error-panel>
+        </div>
+    </lightning-card>
+</template>

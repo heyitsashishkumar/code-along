@@ -27,6 +27,14 @@ Today that's two companion playlists that build **Sharma Traders' customer desk*
 | 15 | Read a record into your own HTML: `customerSummary` with `@wire(getRecord, ...)`, `@salesforce/schema/Contact.*` imports, `'$recordId'`, and `getFieldValue` | [lwc/15-read-a-record](lwc/15-read-a-record/) |
 | 16 | Create, update and delete a record from your own buttons: `newCustomer` (`createRecord`, `updateRecord`, `deleteRecord`, `ShowToastEvent`), `ldsUtils` (`reduceErrors`), and `errorPanel` | [lwc/16-create-update-delete](lwc/16-create-update-delete/) |
 | 17 | Picklists and object info without hardcoding: `leadSourcePicker` chaining `@wire(getObjectInfo)` into `@wire(getPicklistValues)` with `'$objectInfo.data.defaultRecordTypeId'` | [lwc/17-picklists](lwc/17-picklists/) |
+| 18 | Wire an Apex method: `ContactController.cls` (`@AuraEnabled(cacheable=true)` `getContacts` and `findContacts`) and `contactSearch` wired with `@wire(findContacts, { searchKey: '$searchKey' })` | [lwc/18-wire-apex](lwc/18-wire-apex/) |
+| 19 | Call Apex on a click: `DealController.cls` (`getDeals`) and `customerDeals` calling `await getDeals({ accountId: this.recordId })` imperatively with `lightning-spinner` and `try` / `catch` / `finally` | [lwc/19-call-apex](lwc/19-call-apex/) |
+| 20 | Tables: `customerDeals` upgraded to `lightning-datatable` with inline editing (`editable: true`, `draftValues`, `Promise.all` + `updateRecord`) and `await refreshApex(this.deals)` | [lwc/20-datatable](lwc/20-datatable/) |
+| 21 | Moving around the app: `customerSummary` with `NavigationMixin` (`standard__recordPage` and `standard__objectPage` for Open company, New customer, and All customers) | [lwc/21-navigation](lwc/21-navigation/) |
+| 22 | Components that aren't related (Lightning Message Service): `Customer_Selected__c` message channel, `contactSearch` publishing `publish(this.messageContext, ...)`, and `customerForm` + `customerDeals` subscribing | [lwc/22-message-service](lwc/22-message-service/) |
+| 23 | Modals, alerts, labels and static resources: `noteModal` (`LightningModal`), `LightningAlert`, `LightningConfirm`, and `deskHeader` (`@salesforce/label` + `@salesforce/resourceUrl`) | [lwc/23-modals-labels-resources](lwc/23-modals-labels-resources/) |
+| 24 | Test your component: Jest unit tests (`@salesforce/sfdx-lwc-jest`) for `contactTile`, `contactSearch` (fake timers & wire adapter), and `customerDeals` | [lwc/24-jest](lwc/24-jest/) |
+| 25 | Put it together: `customerDesk` combining `<c-desk-header>`, `<c-contact-search>`, `<c-customer-form>`, and `<c-customer-deals>` in a responsive two-column layout | [lwc/25-put-it-together](lwc/25-put-it-together/) |
 
 ## Apex from Zero (`apex/`)
 
@@ -47,6 +55,11 @@ Today that's two companion playlists that build **Sharma Traders' customer desk*
 | 13 | Write `DealController` and throw readable errors: `DealController.cls` (`getDeals`, `createQuickDeal`, `insert as user`, and `AuraHandledException` for LWC #19–#20) | [apex/13-deal-controller](apex/13-deal-controller/) |
 | 14 | Write your first Apex unit test (`@IsTest`, `@TestSetup`, and `Assert`): `ContactControllerTest.cls` testing `getContacts`, `findContacts`, `System.runAs(salesRep)`, `AccountDirectory`, `CustomerOnboarding`, and `CustomerQueries` | [apex/14-contact-controller-test](apex/14-contact-controller-test/) |
 | 15 | Test data, users, and exceptions: `DealControllerTest.cls` testing `getDeals`, `createQuickDeal`, and negative `AuraHandledException` assertions | [apex/15-deal-controller-test](apex/15-deal-controller-test/) |
+| 16 | Your first Apex trigger (`before` vs `after`): `ContactTrigger.trigger` (`before insert, before update` on `Trigger.new` setting default `LeadSource` and `MailingCountry` with zero extra DML) | [apex/16-first-trigger](apex/16-first-trigger/) |
+| 17 | `after` triggers (updating related records): `OpportunityTrigger.trigger` (`Trigger.isBefore` defaults + `Trigger.isAfter` aggregate rollup of `'Closed Won'` totals onto `Account.AnnualRevenue`) | [apex/17-after-trigger](apex/17-after-trigger/) |
+| 18 | Trigger context variables, `Trigger.old`, and reparenting: handling `after delete`, `after undelete`, and reparented deals across `Trigger.new` and `Trigger.old` | [apex/18-trigger-oldmap](apex/18-trigger-oldmap/) |
+| 19 | Bulkifying triggers (the 200-record rule and `addError`): `deal.Amount.addError('Deal amount cannot be negative.')` and 200-record bulk rollup in 1 SOQL query and 1 DML statement | [apex/19-bulk-triggers](apex/19-bulk-triggers/) |
+| 20 | The Trigger Handler pattern and trigger tests: `OpportunityTrigger.trigger` + `OpportunityTriggerHandler.cls` (`beforeSave`, `afterChange`) + `OpportunityTriggerTest.cls` (200-record bulk test, reparent/delete/undelete, and `addError` at 100% coverage) | [apex/20-trigger-handler](apex/20-trigger-handler/) |
 
 More folders are added as the videos come out. When the videos work with records, each folder also includes a `data/` folder with Sharma Traders' made-up customers, companies and deals (standard Account, Contact and Opportunity records). Load them into your org once with:
 

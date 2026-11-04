@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Customer Selected</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Sent when a customer is picked on the customer desk.</description>
+    <lightningMessageFields>
+        <fieldName>contactId</fieldName>
+        <description>The Id of the contact that was picked</description>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <fieldName>accountId</fieldName>
+        <description>The Id of that contact's account</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

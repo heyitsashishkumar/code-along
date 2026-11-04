@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Find a customer" icon-name="standard:search">
+        <div class="slds-p-horizontal_small">
+            <lightning-input type="search" label="Search by name" onchange={handleSearchChange} class="slds-m-bottom_small"></lightning-input>
+            <template lwc:if={contacts.data}>
+                <div onselect={handleSelect}>
+                    <template for:each={contacts.data} for:item="contact">
+                        <c-contact-tile key={contact.Id} contact={contact}></c-contact-tile>
+                    </template>
+                </div>
+            </template>
+            <template lwc:if={selectedContact}>
+                <p class="selected slds-m-top_small">Selected: {selectedContact.Name}, {selectedContact.Phone}</p>
+            </template>
+            <c-error-panel errors={contacts.error}></c-error-panel>
+        </div>
+    </lightning-card>
+</template>

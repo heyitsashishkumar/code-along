@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Customer's name" icon-name="standard:contact">
+        <div class="slds-p-horizontal_small">
+            <lightning-input label="First name" onchange={handleFirstNameChange}></lightning-input>
+            <lightning-input label="Last name" onchange={handleLastNameChange}></lightning-input>
+            <p class="slds-m-top_small">Full name: {fullName}</p>
+        </div>
+    </lightning-card>
+</template>

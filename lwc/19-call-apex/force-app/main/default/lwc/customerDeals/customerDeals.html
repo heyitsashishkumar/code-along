@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Deals" icon-name="standard:opportunity">
+        <lightning-button slot="actions" label="Show deals" onclick={handleLoad}></lightning-button>
+        <div class="deals slds-p-horizontal_small">
+            <template lwc:if={isLoading}>
+                <lightning-spinner alternative-text="Loading deals" size="small"></lightning-spinner>
+            </template>
+            <template lwc:if={deals}>
+                <template for:each={deals} for:item="deal">
+                    <p key={deal.Id} class="deal">
+                        {deal.Name}, {deal.StageName}:
+                        <lightning-formatted-number value={deal.Amount} format-style="currency" currency-code="INR" class="slds-m-left_xx-small"></lightning-formatted-number>
+                    </p>
+                </template>
+            </template>
+            <c-error-panel errors={error}></c-error-panel>
+        </div>
+    </lightning-card>
+</template>

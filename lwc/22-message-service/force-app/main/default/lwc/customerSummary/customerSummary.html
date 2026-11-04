@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Customer summary" icon-name="standard:contact">
+        <div class="slds-p-horizontal_small">
+            <template lwc:if={contact.data}>
+                <p class="name slds-text-heading_small">{name}</p>
+                <p>{title}, {company}</p>
+                <p>{phone}</p>
+                <p>{email}</p>
+                <div class="slds-m-top_small">
+                    <lightning-button label="Open company" onclick={handleOpenCompany} class="slds-m-right_x-small"></lightning-button>
+                    <lightning-button label="New customer" onclick={handleNewCustomer} class="slds-m-right_x-small"></lightning-button>
+                    <lightning-button label="All customers" onclick={handleAllCustomers}></lightning-button>
+                </div>
+            </template>
+            <template lwc:elseif={contact.error}>
+                <p class="error slds-text-color_error">Couldn't load this customer.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
