@@ -1,0 +1,148 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "Deal01Ref"
+      },
+      "Name": "Warehouse racks",
+      "StageName": "Negotiation/Review",
+      "Amount": 180000,
+      "CloseDate": "2026-12-15",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@VermaRef"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "Deal02Ref"
+      },
+      "Name": "Packing material, yearly",
+      "StageName": "Closed Won",
+      "Amount": 95000,
+      "CloseDate": "2026-08-20",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@VermaRef"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "Deal03Ref"
+      },
+      "Name": "Diwali gift hampers",
+      "StageName": "Proposal/Price Quote",
+      "Amount": 120000,
+      "CloseDate": "2026-11-05",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@GuptaRef"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "Deal04Ref"
+      },
+      "Name": "Shop shelving",
+      "StageName": "Closed Won",
+      "Amount": 60000,
+      "CloseDate": "2026-07-10",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@GuptaRef"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "Deal05Ref"
+      },
+      "Name": "Fabric rolls, winter stock",
+      "StageName": "Qualification",
+      "Amount": 250000,
+      "CloseDate": "2027-01-20",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@IyerRef"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "Deal06Ref"
+      },
+      "Name": "LED panel lights",
+      "StageName": "Needs Analysis",
+      "Amount": 75000,
+      "CloseDate": "2026-12-01",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@KhanRef"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "Deal07Ref"
+      },
+      "Name": "Copper wire drums",
+      "StageName": "Closed Lost",
+      "Amount": 140000,
+      "CloseDate": "2026-09-02",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@KhanRef"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "Deal08Ref"
+      },
+      "Name": "Sweet boxes, festive",
+      "StageName": "Prospecting",
+      "Amount": 45000,
+      "CloseDate": "2026-11-25",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@DasRef"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "Deal09Ref"
+      },
+      "Name": "Tool kits for site teams",
+      "StageName": "Value Proposition",
+      "Amount": 88000,
+      "CloseDate": "2026-12-10",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@PatelRef"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "Deal10Ref"
+      },
+      "Name": "Cement mixer rental",
+      "StageName": "Closed Won",
+      "Amount": 32000,
+      "CloseDate": "2026-06-30",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@PatelRef"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "Deal11Ref"
+      },
+      "Name": "Cold storage boxes",
+      "StageName": "Id. Decision Makers",
+      "Amount": 310000,
+      "CloseDate": "2027-02-14",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@ReddyRef"
+    },
+    {
+      "attributes": {
+        "type": "Opportunity",
+        "referenceId": "Deal12Ref"
+      },
+      "Name": "Spare parts, monthly",
+      "StageName": "Perception Analysis",
+      "Amount": 150000,
+      "CloseDate": "2026-12-20",
+      "Description": "Made-up sample data for the LWC from Zero playlist. Not a real business.",
+      "AccountId": "@SinghRef"
+    }
+  ]
+}

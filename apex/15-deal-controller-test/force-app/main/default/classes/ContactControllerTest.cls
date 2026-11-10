@@ -117,8 +117,10 @@ private class ContactControllerTest {
         );
 
         Assert.areEqual(4, CustomerQueries.getContactsByCity('Noida').size());
+        Assert.areEqual(0, CustomerQueries.getContactsByCity('').size());
         Assert.areEqual(1, CustomerQueries.getShopsWithContacts('Verma').size());
         Assert.areEqual(95000, CustomerQueries.getTotalWonDealAmount(accounts[0].Id));
         Assert.areEqual(0, CustomerQueries.getTotalWonDealAmount(onboarded.Id));
+        Assert.areEqual(0, CustomerQueries.getTotalWonDealAmount(null));
     }
 }

@@ -60,8 +60,13 @@ Today that's two companion playlists that build **Sharma Traders' customer desk*
 | 18 | Trigger context variables, `Trigger.old`, and reparenting: handling `after delete`, `after undelete`, and reparented deals across `Trigger.new` and `Trigger.old` | [apex/18-trigger-oldmap](apex/18-trigger-oldmap/) |
 | 19 | Bulkifying triggers (the 200-record rule and `addError`): `deal.Amount.addError('Deal amount cannot be negative.')` and 200-record bulk rollup in 1 SOQL query and 1 DML statement | [apex/19-bulk-triggers](apex/19-bulk-triggers/) |
 | 20 | The Trigger Handler pattern and trigger tests: `OpportunityTrigger.trigger` + `OpportunityTriggerHandler.cls` (`beforeSave`, `afterChange`) + `OpportunityTriggerTest.cls` (200-record bulk test, reparent/delete/undelete, and `addError` at 100% coverage) | [apex/20-trigger-handler](apex/20-trigger-handler/) |
+| 21 | Async Apex part 1 (`Queueable` and `@future`): `WelcomeEmailJob.cls` (`implements Queueable`, `System.enqueueJob`, `@future stampOnboardingNoteAsync`) and `WelcomeEmailJobTest.cls` (`Test.startTest()` / `Test.stopTest()`) | [apex/21-queueable-and-future](apex/21-queueable-and-future/) |
+| 22 | Async Apex part 2 (`Database.Batchable` and `Schedulable`): `StaleDealBatch.cls` (`Database.Batchable<SObject>`, `Database.Stateful`), `StaleDealScheduler.cls` (`Schedulable`, `System.schedule`), and `StaleDealBatchTest.cls` | [apex/22-batch-and-scheduled](apex/22-batch-and-scheduled/) |
+| 23 | Calling an external REST API (`Http`, `JSON`) and exposing Apex to Flow (`@InvocableMethod`): `PincodeLookupService.cls` (`HttpRequest`, `JSON.deserialize`), `DealFlowAction.cls` (`@InvocableMethod`, `@InvocableVariable`), and `PincodeLookupServiceTest.cls` (`HttpCalloutMock`, `Test.setMock`) | [apex/23-callouts-and-json](apex/23-callouts-and-json/) |
+| 24 | Platform Events (`EventBus.publish`) and Custom Metadata Types (`getAll()`): `DeskEventService.cls` (0-SOQL threshold lookup, `@TestVisible` override, high-value deal alerts) and `DeskEventServiceTest.cls` | [apex/24-invocable-and-events](apex/24-invocable-and-events/) |
+| 25 | Put the whole customer-desk backend together, run the full test suite, and ship: `ApexDeskTestSuite.cls` + `DeskGreeterTest.cls` + `DealCalculatorTest.cls` (end-to-end integration test and 100% org-wide coverage across all 17 classes and triggers) | [apex/25-put-it-together](apex/25-put-it-together/) |
 
-More folders are added as the videos come out. When the videos work with records, each folder also includes a `data/` folder with Sharma Traders' made-up customers, companies and deals (standard Account, Contact and Opportunity records). Load them into your org once with:
+When the videos work with records, each folder also includes a `data/` folder with Sharma Traders' made-up customers, companies and deals (standard Account, Contact and Opportunity records). Load them into your org once with:
 
 ```bash
 sf data import tree --plan data/plan.json
