@@ -50,6 +50,6 @@ Already finished EP 1 in your own org? You don't need to run anything here.
 
 - **Accounts** lists **Brookfield Water** (phone (312) 555-0142) and **Sample Account for Entitlements**, which Salesforce makes itself.
 - **The user menu** says **Owen Hartley**, with the **System Administrator** profile.
-- **Setup, Quick Find `Company Information`:** the organization name says **Kestrel Industrial**. The user licenses show **Salesforce: 5 total, 1 used** (the video says 2 total: see the edition note at the top).
+- **Setup, Quick Find `Company Information`:** the organization name says **Kestrel Industrial**, and the edition says **Enterprise Edition**. The user licenses show **Salesforce: 5 total, 1 used** (the video says 2 total: see the edition note at the top).
 - **Setup, Users:** four users: Chatter Expert, Integration User, Security User, and you.
 - The time zone may still say Los Angeles. Episode 2 teaches time zones.

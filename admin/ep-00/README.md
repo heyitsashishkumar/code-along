@@ -17,7 +17,7 @@ ep-00/
   README.md  TROUBLESHOOTING.md
 ```
 
-- **`config/project-scratch-def.json`** is the blueprint file. It says: a Developer Edition org called **Kestrel Industrial**, country US, language English (US), no sample data, and two settings that match the videos' screens. It has no email address in it, so Salesforce sends any verification code to **your** email.
+- **`config/project-scratch-def.json`** is the blueprint file. It says: an Enterprise Edition org called **Kestrel Industrial**, country US, language English (US), no sample data, and two settings that match the videos' screens. It has no email address in it, so Salesforce sends any verification code to **your** email.
 - **`Kestrel_Practice`** is a permission set (label **Kestrel Practice**). A permission set gives access. It's empty today. Each later folder adds access to what that episode builds (objects, fields, tabs, apps), so you can see everything you make.
 - There's no `data/` folder yet, because there are no records to load. Brookfield Water, Kestrel's first customer, arrives in `ep-01`.
 
