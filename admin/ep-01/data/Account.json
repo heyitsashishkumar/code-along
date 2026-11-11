@@ -1,0 +1,12 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef1"
+            },
+            "Name": "Brookfield Water",
+            "Phone": "(312) 555-0142"
+        }
+    ]
+}

@@ -9,6 +9,7 @@ Each folder is Kestrel's practice org **at the end of one episode**, as a comple
 | Folder | State of the org | Video |
 |---|---|---|
 | [ep-00](ep-00/) | Kestrel's empty org: the scratch definition and the `Kestrel_Practice` permission set, nothing an episode adds | The setup video: your own free practice org |
+| [ep-01](ep-01/) | Same metadata as `ep-00`, plus the account Brookfield Water (in `data/`) and a script that renames you to Owen Hartley | Episode 1: You're the Salesforce guy now |
 
 More folders (`ep-01`, `ep-02`, and so on) are added as each episode is recorded.
 

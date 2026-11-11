@@ -1,6 +1,34 @@
-# Troubleshooting · ep-00 · Your own free practice org
+# Troubleshooting · ep-01 · You're the Salesforce guy now
 
-Every error and trap in the setup video, with the exact message. The CLI messages were copied from a real terminal (Salesforce CLI 2.138.6), never from memory. The video was made on a Mac. Nothing was tested on Windows, so a Windows message is described here, never quoted. If yours isn't listed, paste the exact error in the video's comments and say whether you're on Windows or Mac.
+The traps in episode 1 come first. Below them are the setup video's errors, with the exact messages, copied from a real terminal (Salesforce CLI 2.138.6). The video was made on a Mac. Nothing was tested on Windows, so a Windows message is described here, never quoted. If yours isn't listed, paste the exact error in the video's comments and say whether you're on Windows or Mac.
+
+## My screen doesn't look like the video's tabs
+
+The tabs along the top change with the **app**. The video uses an app whose name is at the **top left**, next to the grid icon. If your tabs differ, click the grid icon (the App Launcher) and pick the same app, or search for what you need, for example **Accounts**.
+
+## Setup opened in a new tab
+
+Clicking the gear, then **Setup**, opens Setup in a **new browser tab**. That's normal. Your first tab is still there. Close the Setup tab, or click back to the first one.
+
+## My user is called "User User"
+
+A new scratch org names its first user **User User**. Episode 1 renames you to **Owen Hartley** (Setup, Quick Find `Users`, Users, Edit). In a hurry, run the script: from this folder, `sf apex run --file scripts/rename-admin-user.apex`. It renames whoever runs it, so it needs no username.
+
+## Accounts also shows "Sample Account for Entitlements"
+
+Salesforce makes that account itself in every new org, even with sample data off. It's not yours and it's not a mistake. Leave it alone.
+
+## The license numbers don't match the video
+
+The video shows **Salesforce: 2 total, 1 used** (Setup, Company Information, User Licenses). You'll see that in a fresh scratch org from this definition file. The used count goes up when you add users, and the totals differ in another edition.
+
+## The Users list has four users, not just me
+
+Setup, then Users, lists **Chatter Expert**, **Integration User**, **Security User** and you. The other three are made by Salesforce, and none of them uses one of your two Salesforce licenses. Don't deactivate them.
+
+## I have two Brookfield Water accounts
+
+You created Brookfield Water by hand and then ran `sf data import tree --plan data/plan.json`, or you ran the import twice. Open **Accounts**, open the extra one, and delete it (the arrow next to Edit, then Delete). Load it only once.
 
 ## "command not found: sf"
 

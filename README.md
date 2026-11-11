@@ -80,6 +80,7 @@ Each folder is Kestrel Industrial's practice org **at the end of one episode**, 
 | Video | What it holds | Folder |
 |---|---|---|
 | Before episode 1 | Set up your own free practice org: Dev Hub, the Salesforce CLI, a scratch org from `config/project-scratch-def.json`, and the `Kestrel_Practice` permission set | [admin/ep-00](admin/ep-00/) |
+| Episode 1: You're the Salesforce guy now. Same metadata as `ep-00`, plus the account Brookfield Water and a script that renames you to Owen Hartley | [admin/ep-01](admin/ep-01/) |
 
 ## How to use it with the playlists
 
