@@ -4,6 +4,8 @@ The starting folder for **The Accidental Admin**, and the one the setup video (*
 
 Every folder in `admin/` is Kestrel Industrial's practice org **at the end of one episode**. `ep-00` is the org before episode 1: nothing has been built yet. Episode 1 starts from here, and episode N starts from `ep-(N-1)`.
 
+> **Edition note:** the videos show **Developer Edition** and Salesforce licenses **"2 total, 1 used"**. Your org shows **Enterprise Edition** and **5 total**. We switched to Enterprise so Tom, Lena, Danny and Diane can all be full Salesforce users later. Your free org that builds the scratch org is still a Developer Edition. Everything else in this folder is the same.
+
 ## What's in this folder
 
 ```

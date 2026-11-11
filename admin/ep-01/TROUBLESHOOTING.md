@@ -20,7 +20,7 @@ Salesforce makes that account itself in every new org, even with sample data off
 
 ## The license numbers don't match the video
 
-The video shows **Salesforce: 2 total, 1 used** (Setup, Company Information, User Licenses). You'll see that in a fresh scratch org from this definition file. The used count goes up when you add users, and the totals differ in another edition.
+The video shows **Developer Edition** and **Salesforce: 2 total, 1 used** (Setup, Company Information, User Licenses). Your org is **Enterprise Edition** from this definition file, so it shows **Salesforce: 5 total, 1 used**. That's expected: we switched so more full users fit later. The used count goes up when you add users.
 
 ## The Users list has four users, not just me
 

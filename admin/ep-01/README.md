@@ -2,6 +2,8 @@
 
 The finished org for **The Accidental Admin, episode 1**. Start the episode from [`ep-00`](../ep-00/); this folder is what your org looks like at the end. Stuck on an error? See [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
+> **Edition note:** the videos show **Developer Edition** and Salesforce licenses **"2 total, 1 used"**. Your org shows **Enterprise Edition** and **5 total**. We switched to Enterprise so Tom, Lena, Danny and Diane can all be full Salesforce users later. Your free org that builds the scratch org is still a Developer Edition. Everything else in EP 1 is the same.
+
 ## What's in this folder
 
 ```
@@ -48,6 +50,6 @@ Already finished EP 1 in your own org? You don't need to run anything here.
 
 - **Accounts** lists **Brookfield Water** (phone (312) 555-0142) and **Sample Account for Entitlements**, which Salesforce makes itself.
 - **The user menu** says **Owen Hartley**, with the **System Administrator** profile.
-- **Setup, Quick Find `Company Information`:** the organization name says **Kestrel Industrial**. The user licenses show **Salesforce: 2 total, 1 used**.
+- **Setup, Quick Find `Company Information`:** the organization name says **Kestrel Industrial**. The user licenses show **Salesforce: 5 total, 1 used** (the video says 2 total: see the edition note at the top).
 - **Setup, Users:** four users: Chatter Expert, Integration User, Security User, and you.
 - The time zone may still say Los Angeles. Episode 2 teaches time zones.
