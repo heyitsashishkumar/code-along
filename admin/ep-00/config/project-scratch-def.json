@@ -1,0 +1,17 @@
+{
+  "orgName": "Kestrel Industrial",
+  "edition": "Developer",
+  "country": "US",
+  "language": "en_US",
+  "description": "The Accidental Admin: a practice copy of Kestrel Industrial (a made-up company)",
+  "hasSampleData": false,
+  "features": ["EnableSetPasswordInApi"],
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    }
+  }
+}
