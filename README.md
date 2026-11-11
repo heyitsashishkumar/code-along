@@ -2,9 +2,10 @@
 
 The code from the **Freestyle Cyber Hub** code-along playlists, one folder per video. Each folder holds the project exactly as it is at the end of its video, so you can check your work against it, or start the next video from it.
 
-Today that's two companion playlists that build **Sharma Traders' customer desk** together from zero:
+Today that's two companion playlists that build **Sharma Traders' customer desk** together from zero, and a third series that teaches the platform administrator's job:
 - **LWC from Zero: Code Along** (`lwc/`) — the front-end Lightning Web Components, one piece at a time.
 - **Apex from Zero: Code Along** (`apex/`) — the Salesforce backend classes, SOQL queries, controllers, unit tests, and triggers that power the desk.
+- **The Accidental Admin** (`admin/`) — the Salesforce admin series: Kestrel Industrial's practice org, one folder per episode, that you build in a free scratch org of your own.
 
 ## LWC from Zero (`lwc/`)
 
@@ -72,6 +73,15 @@ When the videos work with records, each folder also includes a `data/` folder wi
 sf data import tree --plan data/plan.json
 ```
 
+## The Accidental Admin (`admin/`)
+
+Each folder is Kestrel Industrial's practice org **at the end of one episode**, as a complete Salesforce DX project. Episode N starts from the folder of episode N-1. More rows appear here as each episode is recorded. See [admin/README.md](admin/README.md).
+
+| Video | What it holds | Folder |
+|---|---|---|
+| Before episode 1 | Set up your own free practice org: Dev Hub, the Salesforce CLI, a scratch org from `config/project-scratch-def.json`, and the `Kestrel_Practice` permission set | [admin/ep-00](admin/ep-00/) |
+| Episode 1: You're the Salesforce guy now. Same metadata as `ep-00`, plus the account Brookfield Water and a script that renames you to Owen Hartley | [admin/ep-01](admin/ep-01/) |
+
 ## How to use it with the playlists
 
 1. **Code along in your own project.** Pause the video and type it yourself. That's what makes it stick. Video 2 shows how to make the project.
@@ -83,7 +93,7 @@ Each folder is a complete Salesforce DX project that opens and deploys on its ow
 
 ## Before you start
 
-Use a free practice org, never a work org. A Developer Edition org is free: sign up at `developer.salesforce.com/signup`. Video 2 sets up everything else: VS Code, the Salesforce CLI, Java 21 and the Salesforce Extension Pack.
+Use a free practice org, never a work org. A Developer Edition org is free: sign up at `developer.salesforce.com/signup`. Video 2 sets up everything else: VS Code, the Salesforce CLI, Java 21 and the Salesforce Extension Pack. For The Accidental Admin, the setup video (folder `admin/ep-00`) also turns on Dev Hub and makes your scratch org.
 
 The videos are recorded on a Mac with Salesforce CLI 2.155.7 and the Salesforce Extension Pack 68.4.0, at API version 68.0. On Windows, the steps are the same unless a folder's README says otherwise.
 

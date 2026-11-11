@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Gives the admin user access to everything the Accidental Admin episodes add to Kestrel Industrial's practice org. It is empty in ep-00 and grows with each episode: every later folder adds its objects, fields, tabs and apps here.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Kestrel Practice</label>
+</PermissionSet>
