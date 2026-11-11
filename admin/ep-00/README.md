@@ -55,7 +55,7 @@ sf data import tree --plan data/plan.json
 sf org open
 ```
 
-- **Create** takes a few minutes and ends with `Your scratch org is ready.` `--duration-days 30` is the longest allowed. Leave it off and the org is deleted after 7 days.
+- **Create** takes a minute or so and ends with `Your scratch org is ready.` `--duration-days 30` is the longest allowed. Leave it off and the org is deleted after 7 days.
 - **Deploy** sends this folder into your scratch org. You'll see a table called **Deployed Source** with one row, `Kestrel_Practice`.
 - **Assign** gives you the permission set. You'll see a table called **Permsets Assigned**.
 - **Load: skip it in `ep-00`.** There's no `data/plan.json` here, so the command would say `No file found at data/plan.json`. From `ep-01` on, run it when the folder has a `data/` folder.
