@@ -22,6 +22,8 @@ Episode N starts from the folder of episode N-1. For episode 1, that's `ep-00`.
 3. Create, deploy, assign, load (only if the folder has `data/`) and open, as that folder's README shows.
 4. Do the episode's clicks yourself, in your own scratch org.
 
+Moving an org from one folder to the next and deploy says `Conflict`? Add `--ignore-conflicts` (see each folder's TROUBLESHOOTING.md).
+
 Behind, or your org expired? Build a fresh one from the folder of the last episode you finished. Delete the old one first, to free its slot: `sf org delete scratch --target-org kestrel --no-prompt`.
 
 ## See what an episode changed

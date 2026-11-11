@@ -26,6 +26,18 @@ The video shows **Developer Edition** and **Salesforce: 2 total, 1 used** (Setup
 
 Setup, then Users, lists **Chatter Expert**, **Integration User**, **Security User** and you. The other three are made by Salesforce, and none of them uses one of your two Salesforce licenses. Don't deactivate them.
 
+## "There are changes in the org that conflict with the local changes you're trying to deploy"
+
+Deploying a folder into an org you already deployed an **earlier folder** into fails with a table whose State says `Conflict` (for example for `Kestrel_Practice`), then:
+
+```
+Error (1): There are changes in the org that conflict with the local changes you're trying to deploy.
+```
+
+- **Why:** the CLI tracks changes per folder. This folder has never seen your org, and the org already holds a `Kestrel_Practice` that another folder put there.
+- **Fix:** run `sf project deploy start --ignore-conflicts`, which tells the CLI to send this folder's files anyway. Or skip it: `ep-01` changes no metadata, so an org you finished `ep-00` and EP 1 in needs nothing deployed.
+- A **fresh** scratch org made from this folder doesn't hit this.
+
 ## I have two Brookfield Water accounts
 
 You created Brookfield Water by hand and then ran `sf data import tree --plan data/plan.json`, or you ran the import twice. Open **Accounts**, open the extra one, and delete it (the arrow next to Edit, then Delete). Load it only once.
