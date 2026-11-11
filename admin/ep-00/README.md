@@ -4,6 +4,8 @@ The starting folder for **The Accidental Admin**, and the one the setup video (*
 
 Every folder in `admin/` is Kestrel Industrial's practice org **at the end of one episode**. `ep-00` is the org before episode 1: nothing has been built yet. Episode 1 starts from here, and episode N starts from `ep-(N-1)`.
 
+> **Edition note:** the videos show **Developer Edition** and Salesforce licenses **"2 total, 1 used"**. Your org shows **Enterprise Edition** and **5 total**. We switched to Enterprise so Tom, Lena, Danny and Diane can all be full Salesforce users later. Your free org that builds the scratch org is still a Developer Edition. Everything else in this folder is the same.
+
 ## What's in this folder
 
 ```
@@ -15,7 +17,7 @@ ep-00/
   README.md  TROUBLESHOOTING.md
 ```
 
-- **`config/project-scratch-def.json`** is the blueprint file. It says: a Developer Edition org called **Kestrel Industrial**, country US, language English (US), no sample data, and two settings that match the videos' screens. It has no email address in it, so Salesforce sends any verification code to **your** email.
+- **`config/project-scratch-def.json`** is the blueprint file. It says: an Enterprise Edition org called **Kestrel Industrial**, country US, language English (US), no sample data, and two settings that match the videos' screens. It has no email address in it, so Salesforce sends any verification code to **your** email.
 - **`Kestrel_Practice`** is a permission set (label **Kestrel Practice**). A permission set gives access. It's empty today. Each later folder adds access to what that episode builds (objects, fields, tabs, apps), so you can see everything you make.
 - There's no `data/` folder yet, because there are no records to load. Brookfield Water, Kestrel's first customer, arrives in `ep-01`.
 
@@ -28,6 +30,11 @@ Nothing. This is the starting point, so there's nothing to compare it with. From
 Not for `ep-00` (it's the first folder). From `ep-01` on, each folder is added in two commits: a plain copy of the folder before it, then the episode's changes. The second commit's page on GitHub shows exactly what that episode changed.
 
 ## Deploy it
+
+**Two paths. Pick one.**
+
+- **A new org:** create it from this folder, then deploy, assign, load and rename, as below.
+- **The org you already have** (from an earlier folder): go into this folder and run `sf project deploy start --ignore-conflicts`. Then load data and run scripts **only** if this folder's README says they're new in this episode. Each folder is its own project, so the CLI sees the org's earlier deploy as someone else's change. Without `--ignore-conflicts`, deploy stops with a `Conflict` error (see TROUBLESHOOTING.md).
 
 Do the one-time steps from the setup video first: a free Developer Edition org with **Dev Hub** turned on, the Salesforce CLI, `sf org login web --set-default-dev-hub --alias my-devhub` (in your home folder), and this repo.
 

@@ -2,6 +2,8 @@
 
 The finished org for **The Accidental Admin, episode 1**. Start the episode from [`ep-00`](../ep-00/); this folder is what your org looks like at the end. Stuck on an error? See [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
+> **Edition note:** the videos show **Developer Edition** and Salesforce licenses **"2 total, 1 used"**. Your org shows **Enterprise Edition** and **5 total**. We switched to Enterprise so Tom, Lena, Danny and Diane can all be full Salesforce users later. Your free org that builds the scratch org is still a Developer Edition. Everything else in EP 1 is the same.
+
 ## What's in this folder
 
 ```
@@ -28,7 +30,14 @@ To compare on your own computer: `git diff --no-index admin/ep-00 admin/ep-01`.
 
 ## Deploy it
 
-Do the one-time setup from the setup video first (Dev Hub, the CLI, `sf org login web --set-default-dev-hub --alias my-devhub` in your home folder, and this repo). Already did the setup video's `ep-00`? Your org is the start of this episode: just do the episode's clicks. Otherwise, from this folder:
+Do the one-time setup from the setup video first (Dev Hub, the CLI, `sf org login web --set-default-dev-hub --alias my-devhub` in your home folder, and this repo). Then pick a path.
+
+**Two paths. Pick one.**
+
+- **A new org:** create it from this folder, then deploy, assign, load and rename, as below.
+- **The org you already have** (from an earlier folder): go into this folder and run `sf project deploy start --ignore-conflicts`. Then load data and run scripts **only** if this folder's README says they're new in this episode (in `ep-01`, that's the data and the rename script, and they're new). Each folder is its own project, so the CLI sees the org's earlier deploy as someone else's change. Without `--ignore-conflicts`, deploy stops with a `Conflict` error (see TROUBLESHOOTING.md).
+
+For a **new org**, from this folder:
 
 ```bash
 cd code-along/admin/ep-01
@@ -48,6 +57,6 @@ Already finished EP 1 in your own org? You don't need to run anything here.
 
 - **Accounts** lists **Brookfield Water** (phone (312) 555-0142) and **Sample Account for Entitlements**, which Salesforce makes itself.
 - **The user menu** says **Owen Hartley**, with the **System Administrator** profile.
-- **Setup, Quick Find `Company Information`:** the organization name says **Kestrel Industrial**. The user licenses show **Salesforce: 2 total, 1 used**.
+- **Setup, Quick Find `Company Information`:** the organization name says **Kestrel Industrial**, and the edition says **Enterprise Edition**. The user licenses show **Salesforce: 5 total, 1 used** (the video says 2 total: see the edition note at the top).
 - **Setup, Users:** four users: Chatter Expert, Integration User, Security User, and you.
 - The time zone may still say Los Angeles. Episode 2 teaches time zones.

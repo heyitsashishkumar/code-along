@@ -20,11 +20,23 @@ Salesforce makes that account itself in every new org, even with sample data off
 
 ## The license numbers don't match the video
 
-The video shows **Salesforce: 2 total, 1 used** (Setup, Company Information, User Licenses). You'll see that in a fresh scratch org from this definition file. The used count goes up when you add users, and the totals differ in another edition.
+The video shows **Developer Edition** and **Salesforce: 2 total, 1 used** (Setup, Company Information, User Licenses). Your org is **Enterprise Edition** from this definition file, so it shows **Salesforce: 5 total, 1 used**. That's expected: we switched so more full users fit later. The used count goes up when you add users.
 
 ## The Users list has four users, not just me
 
 Setup, then Users, lists **Chatter Expert**, **Integration User**, **Security User** and you. The other three are made by Salesforce, and none of them uses one of your two Salesforce licenses. Don't deactivate them.
+
+## "There are changes in the org that conflict with the local changes you're trying to deploy"
+
+Deploying a folder into an org you already deployed an **earlier folder** into fails with a table whose State says `Conflict` (for example for `Kestrel_Practice`), then:
+
+```
+Error (1): There are changes in the org that conflict with the local changes you're trying to deploy.
+```
+
+- **Why:** the CLI tracks changes per folder. This folder has never seen your org, and the org already holds a `Kestrel_Practice` that another folder put there.
+- **Fix:** run `sf project deploy start --ignore-conflicts`, which tells the CLI to send this folder's files anyway. Or skip it: `ep-01` changes no metadata, so an org you finished `ep-00` and EP 1 in needs nothing deployed.
+- A **fresh** scratch org made from this folder doesn't hit this.
 
 ## I have two Brookfield Water accounts
 
