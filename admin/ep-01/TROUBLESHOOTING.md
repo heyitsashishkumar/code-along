@@ -24,7 +24,7 @@ The video shows **Developer Edition** and **Salesforce: 2 total, 1 used** (Setup
 
 ## The Users list has four users, not just me
 
-Setup, then Users, lists **Chatter Expert**, **Integration User**, **Security User** and you. The other three are made by Salesforce, and none of them uses one of your two Salesforce licenses. Don't deactivate them.
+Setup, then Users, lists **Chatter Expert**, **Integration User**, **Security User** and you. The other three are made by Salesforce, and none of them uses one of your Salesforce licenses. Don't deactivate them.
 
 ## "There are changes in the org that conflict with the local changes you're trying to deploy"
 
