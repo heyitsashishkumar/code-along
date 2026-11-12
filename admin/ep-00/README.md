@@ -36,7 +36,7 @@ Not for `ep-00` (it's the first folder). From `ep-01` on, each folder is added i
 - **A new org:** create it from this folder, then deploy, assign, load and rename, as below.
 - **The org you already have** (from an earlier folder): go into this folder and run `sf project deploy start --ignore-conflicts`. Then load data and run scripts **only** if this folder's README says they're new in this episode. Each folder is its own project, so the CLI sees the org's earlier deploy as someone else's change. Without `--ignore-conflicts`, deploy stops with a `Conflict` error (see TROUBLESHOOTING.md).
 
-Do the one-time steps from the setup video first: a free Developer Edition org with **Dev Hub** turned on, the Salesforce CLI, `sf org login web --set-default-dev-hub --alias my-devhub` (in your home folder), and this repo.
+Do the one-time steps from the setup video first: a free hands-on org from Trailhead (a Trailhead Playground, which is a Developer Edition) with **Dev Hub** turned on, the Salesforce CLI, `sf org login web --set-default-dev-hub --alias my-devhub` (in your home folder), and this repo.
 
 Then go into the folder. If you used `git clone`:
 

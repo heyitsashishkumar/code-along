@@ -20,9 +20,9 @@ zsh: command not found: sf
 Creating the scratch org fails with a message that ends: `is not a Dev Hub.`
 
 - **Why:** the org you logged in to isn't a Dev Hub. Either you haven't turned Dev Hub on (Setup, Quick Find, **Dev Hub**, turn on **Enable Dev Hub**), or you logged in to a different org.
-- **Fix:** turn Dev Hub on in your free Developer Edition org, then log in again from your home folder: `sf org login web --set-default-dev-hub --alias my-devhub`.
-- No **Dev Hub** in Quick Find? Then you're not in your free Developer Edition org. Salesforce's guide says Dev Hub can't be turned on in a sandbox.
-- Once Dev Hub is on, it can't be turned off. That's fine in a practice org. At work, ask first.
+- **Fix:** turn Dev Hub on in your hands-on org (Setup, Quick Find, **Dev Hub**, the **Enable Dev Hub** toggle), then log in again from your home folder: `sf org login web --set-default-dev-hub --alias my-devhub`.
+- No **Dev Hub** in Quick Find? Then you're not in your hands-on org. Salesforce's guide says Dev Hub can't be turned on in a sandbox.
+- Once Dev Hub is on, it can't be turned off (the page says so: "You can't disable this setting"). That's fine in a practice org. At work, ask first.
 
 ## "No default dev hub found"
 
@@ -67,7 +67,7 @@ Creating the scratch org fails with a message like:
 The signup request failed because this organization has reached its active scratch org limit
 ```
 
-- **Why:** a free Developer Edition Dev Hub keeps only a few scratch orgs at a time (Salesforce's guide says a maximum of three active; yours may allow more). An old org of yours is still counting.
+- **Why:** your free hands-on org, as a Dev Hub, keeps only a few scratch orgs at a time (Salesforce's guide says a maximum of three active; yours may allow more). An old org of yours is still counting.
 - **Fix:** run `sf org list`, then delete one you don't need: `sf org delete scratch --target-org <alias> --no-prompt`. An org that has expired can keep counting for a while. If it still fails, wait a day: the daily allowance is a rolling 24 hours.
 
 ## "Duplicate PermissionSetAssignment"
@@ -95,13 +95,15 @@ Running `sf data import tree --plan data/plan.json` fails with `No file found at
 
 If the browser login never comes back to the terminal on a college or office network, a proxy may be blocking it. Salesforce's install guide says to set the `HTTP_PROXY` and `HTTPS_PROXY` environment variables to your proxy's address. We haven't reproduced this one ourselves. Ask your network admin for the proxy address.
 
-## Sign-up: the username isn't your email
+## Your free org: a hands-on org from Trailhead
 
-- The free Developer Edition sign-up asks for your name, job title, company, country and **your email**. You can't choose a username. Salesforce makes one for you and shows it in the welcome email.
-- The username **looks like an email address, but it isn't your inbox**. Log in with that username, not with your own email.
-- Open the welcome email, click its button and set a password. Write down the username and the password in a password manager, never on a sticky note.
-- Can't find the email? Check spam, and check that you typed an address you can open.
+- **Make it on Trailhead.** Sign up or log in at [trailhead.com](https://trailhead.com) (free). Open any hands-on challenge (every project is hands-on: Learn, then Projects), click the arrow next to **Launch**, and choose **Create Playground** (it may say **Create a Trailhead Playground**). It takes about 3 to 4 minutes. A Trailhead Playground is a hands-on org, and Salesforce Help says it's "actually a Developer Edition".
+- **The username:** launch the org and open the **Get Your Login Credentials** tab. Write down the username shown there. No such tab? Open the App Launcher and choose **Playground Starter**, or go to Setup, Quick Find `Users`, Users, and note your username there.
+- **The password:** you need one for the CLI login, and a new playground opens from Trailhead without one. On the same tab, click **Reset My Password**, open the email, click its link and set a password. Do it **before** your first `sf org login web`. (No tab? In Setup, Users, tick your name and click **Reset Password(s)**.)
+- The username **looks like an email address, but it isn't your inbox**. Log in with that username, not with your Trailhead email.
+- **Never change that username.** Trailhead uses it to check your work in challenges.
+- Write the username and the password in a password manager, never on a sticky note. Can't find the reset email? Check spam.
 
-## Your free org can be deleted after 45 days
+## Your free org can be deleted if nobody logs in
 
-Salesforce deletes a free Developer Edition org that nobody has logged into for **45 days**. It emails you first. Logging in during the first 14 days after the warning brings the org back. Your Dev Hub is that free org, so log in at least once a month. If it's gone, sign up for a new one and do steps two to four of the setup video again.
+Free orgs that nobody logs into get deleted. Salesforce Help says a Developer Edition org that hasn't been logged into for **45 days** is deleted, and a hands-on org is a Developer Edition. Salesforce emails you first, and logging in during the first 14 days after the warning brings the org back. Your Dev Hub is that free org, so log in at least once a month. If it's gone, make a new hands-on org on Trailhead and do steps two to four of the setup video again.
