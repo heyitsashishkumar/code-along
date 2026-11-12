@@ -1,6 +1,6 @@
 # Troubleshooting · ep-01 · You're the Salesforce guy now
 
-The traps in episode 1 come first. Below them are the setup video's errors, with the exact messages, copied from a real terminal (Salesforce CLI 2.138.6). The video was made on a Mac. Nothing was tested on Windows, so a Windows message is described here, never quoted. If yours isn't listed, paste the exact error in the video's comments and say whether you're on Windows or Mac.
+The traps in episode 1 come first. Below them are the setup video's errors, with the exact messages, copied from a real terminal (Salesforce CLI 2.158.7). The video was made on a Mac. Nothing was tested on Windows, so a Windows message is described here, never quoted. If yours isn't listed, paste the exact error in the video's comments and say whether you're on Windows or Mac.
 
 ## My screen doesn't look like the video's tabs
 
@@ -51,9 +51,10 @@ zsh: command not found: sf
 ```
 
 - **Why:** the terminal was opened before you installed the Salesforce CLI. It still has the old list of places to look for programs (the PATH), so it doesn't know `sf` yet.
-- **Fix:** close that terminal and open a new one, then run `sf --version` again. It prints a version, for example `@salesforce/cli/2.138.6 darwin-arm64 node-v20.20.2`. Yours may be newer.
+- **Fix:** close that terminal and open a new one, then run `sf --version` again. It prints a version, for example `@salesforce/cli/2.158.7 darwin-arm64 node-v26.0.0`. Yours may be newer, and the `node` part may differ.
 - **On Windows** you'll see a similar message (a "not recognized" error). The fix is the same: close every PowerShell window, Command Prompt and VS Code, then open them again.
 - Still not found? Install the CLI one way only. Installing it with the installer **and** with npm leads to confusing path problems.
+- Installed it with npm? The CLI needs **Node.js 22 or newer**. Check with `node --version`, and update Node.js first if it's older.
 
 ## "The specified org ... is not a Dev Hub."
 

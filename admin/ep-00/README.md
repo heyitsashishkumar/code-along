@@ -97,4 +97,4 @@ sf org list
 
 ## Versions
 
-The project's `sourceApiVersion` is `68.0`. Recorded with Salesforce CLI 2.138.6 and later. Newer versions should work the same way. If a step looks different on your screen, paste what you see in the video's comments, and say Mac or Windows.
+The project's `sourceApiVersion` is `68.0`. Recorded with Salesforce CLI 2.158.7. Newer versions should work the same way. If you install the CLI with npm, you need Node.js 22 or newer. If a step looks different on your screen, paste what you see in the video's comments, and say Mac or Windows.
