@@ -17,7 +17,7 @@ More folders (`ep-01`, `ep-02`, and so on) are added as each episode is recorded
 
 Episode N starts from the folder of episode N-1. For episode 1, that's `ep-00`.
 
-1. Do the one-time setup from the setup video: a free Developer Edition org with Dev Hub turned on, the Salesforce CLI, `sf org login web --set-default-dev-hub --alias my-devhub` in your home folder, and this repo.
+1. Do the one-time setup from the setup video: a free hands-on org from Trailhead (a Trailhead Playground, which is a Developer Edition) with Dev Hub turned on, the Salesforce CLI, `sf org login web --set-default-dev-hub --alias my-devhub` in your home folder, and this repo.
 2. Go into the folder of the episode **before** the one you want, for example `cd code-along/admin/ep-00` to start episode 1.
 3. Pick one path. **A new org:** create it from that folder, then deploy, assign, load (only if the folder has `data/`), run any script and open, as that folder's README shows. **The org you already have:** from the new folder, run `sf project deploy start --ignore-conflicts`, then load and run scripts only if that folder's README says they're new in this episode. Each folder is its own project, so the CLI sees the org's earlier deploy as someone else's change. Without the flag, deploy stops with a `Conflict` error.
 4. Do the episode's clicks yourself, in your own scratch org.

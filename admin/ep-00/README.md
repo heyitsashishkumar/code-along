@@ -36,7 +36,7 @@ Not for `ep-00` (it's the first folder). From `ep-01` on, each folder is added i
 - **A new org:** create it from this folder, then deploy, assign, load and rename, as below.
 - **The org you already have** (from an earlier folder): go into this folder and run `sf project deploy start --ignore-conflicts`. Then load data and run scripts **only** if this folder's README says they're new in this episode. Each folder is its own project, so the CLI sees the org's earlier deploy as someone else's change. Without `--ignore-conflicts`, deploy stops with a `Conflict` error (see TROUBLESHOOTING.md).
 
-Do the one-time steps from the setup video first: a free Developer Edition org with **Dev Hub** turned on, the Salesforce CLI, `sf org login web --set-default-dev-hub --alias my-devhub` (in your home folder), and this repo.
+Do the one-time steps from the setup video first: a free hands-on org from Trailhead (a Trailhead Playground, which is a Developer Edition) with **Dev Hub** turned on, the Salesforce CLI, `sf org login web --set-default-dev-hub --alias my-devhub` (in your home folder), and this repo.
 
 Then go into the folder. If you used `git clone`:
 
@@ -81,7 +81,7 @@ On Windows the commands are the same in PowerShell or Command Prompt.
 - **Setup, then Company Information:** the organization name says **Kestrel Industrial**.
 - **The user menu** (your picture, top right) says **User User**. That's you: a new scratch org names its first user that. You'll rename yourself in episode 1.
 - **Time zone:** Company Information may say **Pacific Time (America/Los_Angeles)**. That's normal. The definition file can't set a time zone, and episode 2 has you change it.
-- **Accounts:** one account, **Sample Account for Entitlements**, that Salesforce makes itself. No Brookfield Water yet.
+- **Accounts:** one account, **Sample Account for Entitlements**, that Salesforce makes itself. No Brookfield Water yet. A brand-new org has no **All Accounts** list to choose, so search Accounts for `Sample` to find it.
 - **Permission sets** (Setup, then Permission Sets): **Kestrel Practice**, assigned to you.
 
 ## Start again
@@ -97,4 +97,4 @@ sf org list
 
 ## Versions
 
-The project's `sourceApiVersion` is `68.0`. Recorded with Salesforce CLI 2.138.6 and later. Newer versions should work the same way. If a step looks different on your screen, paste what you see in the video's comments, and say Mac or Windows.
+The project's `sourceApiVersion` is `68.0`. Recorded with Salesforce CLI 2.158.7. Newer versions should work the same way. If you install the CLI with npm, you need Node.js 22 or newer. If a step looks different on your screen, paste what you see in the video's comments, and say Mac or Windows.
