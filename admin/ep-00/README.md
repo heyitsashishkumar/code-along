@@ -81,7 +81,7 @@ On Windows the commands are the same in PowerShell or Command Prompt.
 - **Setup, then Company Information:** the organization name says **Kestrel Industrial**.
 - **The user menu** (your picture, top right) says **User User**. That's you: a new scratch org names its first user that. You'll rename yourself in episode 1.
 - **Time zone:** Company Information may say **Pacific Time (America/Los_Angeles)**. That's normal. The definition file can't set a time zone, and episode 2 has you change it.
-- **Accounts:** one account, **Sample Account for Entitlements**, that Salesforce makes itself. No Brookfield Water yet.
+- **Accounts:** one account, **Sample Account for Entitlements**, that Salesforce makes itself. No Brookfield Water yet. A brand-new org has no **All Accounts** list to choose, so search Accounts for `Sample` to find it.
 - **Permission sets** (Setup, then Permission Sets): **Kestrel Practice**, assigned to you.
 
 ## Start again

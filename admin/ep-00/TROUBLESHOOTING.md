@@ -16,6 +16,14 @@ zsh: command not found: sf
 - Still not found? Install the CLI one way only. Installing it with the installer **and** with npm leads to confusing path problems.
 - Installed it with npm? The CLI needs **Node.js 22 or newer**. Check with `node --version`, and update Node.js first if it's older.
 
+## The login asks for a verification code
+
+You run `sf org login web --set-default-dev-hub --alias my-devhub`, type the username and password on Salesforce's login page, and instead of the **Allow** page it asks for a **verification code**.
+
+- **Why:** Salesforce checks it's really you when you log in from a browser or network it hasn't seen with that user before. It sends the code by email.
+- **Fix:** open the email sent to your org user's address (for a hands-on org, the same address your password-reset email went to), type the code, and verify. Then click **Allow**. The terminal says `Successfully authorized`, with your username and org ID.
+- No email? Check spam, and give it a minute before asking for a new code.
+
 ## "The specified org ... is not a Dev Hub."
 
 Creating the scratch org fails with a message that ends: `is not a Dev Hub.`
@@ -84,6 +92,13 @@ Running `sf data import tree --plan data/plan.json` fails with `No file found at
 
 - **Why:** the folder has no records to load. `ep-00` has none. Skip that step.
 - **Fix:** none needed. If a later folder does have `data/` and you still see it, you're not in that folder (see "No file found" above).
+
+## There's no "All Accounts" list
+
+In a brand-new scratch org, the **Accounts** tab doesn't let you choose an **All Accounts** list yet, so you can't open **Sample Account for Entitlements** from a list.
+
+- **Fix:** search for it. Click the search box at the top, type `Sample`, press Enter, then click **Accounts** in the results. **Sample Account for Entitlements** is there. Salesforce makes it itself.
+- The same works for any record: search for it by name.
 
 ## Other things that aren't errors
 

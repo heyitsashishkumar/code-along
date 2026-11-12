@@ -55,7 +55,7 @@ Already finished EP 1 in your own org? You don't need to run anything here.
 
 ## What you should see
 
-- **Accounts** lists **Brookfield Water** (phone (312) 555-0142) and **Sample Account for Entitlements**, which Salesforce makes itself.
+- **Accounts** has **Brookfield Water** (phone (312) 555-0142) and **Sample Account for Entitlements**, which Salesforce makes itself. In a brand-new org there's no **All Accounts** list to choose yet: search for each by name (for example `Sample`).
 - **The user menu** says **Owen Hartley**, with the **System Administrator** profile.
 - **Setup, Quick Find `Company Information`:** the organization name says **Kestrel Industrial**, and the edition says **Enterprise Edition**. The user licenses show **Salesforce: 5 total, 1 used** (the video says 2 total: see the edition note at the top).
 - **Setup, Users:** four users: Chatter Expert, Integration User, Security User, and you.
