@@ -2,10 +2,11 @@
 
 The code from the **Freestyle Cyber Hub** code-along playlists, one folder per video. Each folder holds the project exactly as it is at the end of its video, so you can check your work against it, or start the next video from it.
 
-Today that's two companion playlists that build **Sharma Traders' customer desk** together from zero, and a third series that teaches the platform administrator's job:
+Today that's two companion playlists that build **Sharma Traders' customer desk** together from zero, a third series that teaches the platform administrator's job, and a fourth that builds AI agents:
 - **LWC from Zero: Code Along** (`lwc/`) — the front-end Lightning Web Components, one piece at a time.
 - **Apex from Zero: Code Along** (`apex/`) — the Salesforce backend classes, SOQL queries, controllers, unit tests, and triggers that power the desk.
 - **The Accidental Admin** (`admin/`) — the Salesforce admin series: Kestrel Industrial's practice org, one folder per episode, that you build in a free scratch org of your own.
+- **Agentforce from Zero: Build Along (Specialist Exam Prep)** (`agentforce/`) — Agentforce agents you build by clicking, in a free Developer Edition org of your own, following the Agentforce Specialist exam.
 
 ## LWC from Zero (`lwc/`)
 
@@ -82,24 +83,32 @@ Each folder is Kestrel Industrial's practice org **at the end of one episode**, 
 | Before episode 1 | Set up your own free practice org: Dev Hub, the Salesforce CLI, a scratch org from `config/project-scratch-def.json`, and the `Kestrel_Practice` permission set | [admin/ep-00](admin/ep-00/) |
 | Episode 1: You're the Salesforce guy now. Same metadata as `ep-00`, plus the account Brookfield Water and a script that renames you to Owen Hartley | [admin/ep-01](admin/ep-01/) |
 
+## Agentforce from Zero (`agentforce/`)
+
+**Agentforce from Zero: Build Along (Specialist Exam Prep)** builds one Agentforce agent per video, by clicking along in your own free Developer Edition org, and covers the Salesforce Certified Agentforce Specialist exam as it goes. Each folder is what its video builds, as a complete Salesforce DX project, with a shortcut to deploy it. More rows appear here as each video is published. See [agentforce/README.md](agentforce/README.md).
+
+| Video | What you build | Folder |
+|---|---|---|
+| 1 | Build your first Agentforce agent: **Bit**, an Employee agent from the Agentforce Employee Agent template. A look inside Agentforce Builder, a test in Preview, and an "always" line in the system instructions that breaks every answer, then the fix (`Bit_1.agent`) | [agentforce/01-build-your-first-agent](agentforce/01-build-your-first-agent/) |
+
 ## How to use it with the playlists
 
 1. **Code along in your own project.** Pause the video and type it yourself. That's what makes it stick. Video 2 shows how to make the project.
 2. **Check against the video's folder.** When your screen doesn't match the video, compare your files with that video's folder here.
-3. **Stuck on an error?** Every folder has a `TROUBLESHOOTING.md` with each error from its video: the exact message, why it happens, and the fix. If yours isn't there, paste the exact error in the video's comments, and say whether you're on Windows or Mac.
+3. **Stuck on an error?** Every folder has a `TROUBLESHOOTING.md` (in `agentforce/`, a **Troubleshooting** section at the end of the folder's README) with each error from its video: the exact message, why it happens, and the fix. If yours isn't there, paste the exact error in the video's comments, and say whether you're on Windows or Mac.
 4. **Lost your project?** Copy the previous video's folder somewhere of your own, open that copy in VS Code (File, Open Folder), connect your org (`SFDX: Authorize an Org`), and carry on from there.
 
 Each folder is a complete Salesforce DX project that opens and deploys on its own. Each folder's README explains how to deploy or run it and what you should see.
 
 ## Before you start
 
-Use a free practice org, never a work org. A Developer Edition org is free: sign up at `developer.salesforce.com/signup`. Video 2 sets up everything else: VS Code, the Salesforce CLI, Java 21 and the Salesforce Extension Pack. For The Accidental Admin, the setup video (folder `admin/ep-00`) also turns on Dev Hub and makes your scratch org.
+Use a free practice org, never a work org. A Developer Edition org is free: sign up at `developer.salesforce.com/signup`. Video 2 sets up everything else: VS Code, the Salesforce CLI, Java 21 and the Salesforce Extension Pack. For The Accidental Admin, the setup video (folder `admin/ep-00`) also turns on Dev Hub and makes your scratch org. For Agentforce from Zero, the free Developer Edition comes with Agentforce and Data 360, and video 1 goes through the sign-up. Those videos need only a browser; the CLI is only for their shortcuts.
 
-The videos are recorded on a Mac with Salesforce CLI 2.155.7 and the Salesforce Extension Pack 68.4.0, at API version 68.0. On Windows, the steps are the same unless a folder's README says otherwise.
+The videos are recorded on a Mac with Salesforce CLI 2.155.7 and the Salesforce Extension Pack 68.4.0, at API version 68.0. The Agentforce shortcuts were checked with Salesforce CLI 2.138.6. On Windows, the steps are the same unless a folder's README says otherwise.
 
 ## Where the topics come from
 
-The topics and their order follow Salesforce's own sample galleries, [trailheadapps/lwc-recipes](https://github.com/trailheadapps/lwc-recipes) and [trailheadapps/apex-recipes](https://github.com/trailheadapps/apex-recipes) (both CC0-1.0). The classes, components, the app and the explanations here are our own.
+The LWC and Apex topics and their order follow Salesforce's own sample galleries, [trailheadapps/lwc-recipes](https://github.com/trailheadapps/lwc-recipes) and [trailheadapps/apex-recipes](https://github.com/trailheadapps/apex-recipes) (both CC0-1.0). Agentforce from Zero follows the exam guide for the Salesforce Certified Agentforce Specialist exam; its practice questions are our own, not real exam questions. The classes, components, agents, the app and the explanations here are our own.
 
 ## Licence
 
@@ -107,4 +116,4 @@ The topics and their order follow Salesforce's own sample galleries, [trailheada
 
 ---
 
-Salesforce, Lightning and Apex are trademarks of Salesforce, Inc. This repo and the channel are not affiliated with, sponsored or endorsed by Salesforce. Sharma Traders and its customers are made up.
+Salesforce, Lightning, Apex and Agentforce are trademarks of Salesforce, Inc. This repo and the channel are not affiliated with, sponsored or endorsed by Salesforce. Sharma Traders, Joris's cycle shop and their customers are made up.

@@ -106,7 +106,7 @@ The exam calls the builder **Agentforce Agent Builder**. On screen, it's **Agent
 Before you pick a template, two things the video explains:
 
 - **Why a template?** It's the quicker start: it comes with subagents, actions and settings already made, and you change them later.
-- **Why an Employee agent?** Employee agents help your own people, and they run as whoever is logged in. So the agent can only see and do what that person is allowed to. Service agents talk to customers. A helper for your own staff, like Bit, is an Employee agent. A cycle shop's customers asking "is my bike ready?" would need a Service agent: that's [video 2](../02-is-my-bike-ready/).
+- **Why an Employee agent?** Employee agents help your own people, and they run as whoever is logged in. So the agent can only see and do what that person is allowed to. Service agents talk to customers. A helper for your own staff, like Bit, is an Employee agent. A cycle shop's customers asking "is my bike ready?" would need a Service agent: that's the next video.
 
 2. Under **Or, start with a template**, find the **Agentforce Employee Agent** card and click **Details**. It lists three subagents:
    - **General FAQ** answers from your knowledge: your own documents.
@@ -297,7 +297,7 @@ You ask about a price. The Summary shows the action **Answer Questions With Know
 The video warns about this one. You won't see it with the template's three subagents, but you will once an agent has jobs of its own.
 
 - **Why:** the Agent Router picks a subagent by its name and description. When two descriptions sound alike, it can send a question to the wrong one.
-- **Fix:** check the descriptions first. The **Summary** shows which subagent was picked (**Transition to Subagent**). Make the right subagent's description say plainly what it handles. Video 2 does exactly this.
+- **Fix:** check the descriptions first. The **Summary** shows which subagent was picked (**Transition to Subagent**). Make the right subagent's description say plainly what it handles. The next video does exactly this.
 
 ### Every reply starts with "Absolutely! Consider it done!"
 
