@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Finds a repair order by its number (RO-0001 and so on) and returns it: the bike, its status and when it will be ready.</description>
+    <ends>
+        <name>END_ELEMENT_1</name>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+    </ends>
+    <environments>Default</environments>
+    <interviewLabel>Get Repair Status {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Get Repair Status</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Repair_Order</name>
+        <label>Get Repair Order</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>END_ELEMENT_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>repairOrderNumber</elementReference>
+            </value>
+        </filters>
+        <object>Repair_Order__c</object>
+        <outputReference>repairOrder</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Customer_Name__c</queriedFields>
+        <queriedFields>Bike__c</queriedFields>
+        <queriedFields>Status__c</queriedFields>
+        <queriedFields>Ready_Time__c</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Repair_Order</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>The repair order that was found: the bike, its status and when it will be ready. Empty if no repair order has that number.</description>
+        <name>repairOrder</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Repair_Order__c</objectType>
+    </variables>
+    <variables>
+        <description>The repair order number on the customer&apos;s ticket, like RO-0001.</description>
+        <name>repairOrderNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>
