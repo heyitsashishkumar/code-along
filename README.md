@@ -2,9 +2,8 @@
 
 The code from the **Freestyle Cyber Hub** code-along playlists, one folder per video. Each folder holds the project exactly as it is at the end of its video, so you can check your work against it, or start the next video from it.
 
-Today that's two companion playlists that build **Sharma Traders' customer desk** together from zero, a third series that teaches the platform administrator's job, and a fourth that builds AI agents:
-- **LWC from Zero: Code Along** (`lwc/`) — the front-end Lightning Web Components, one piece at a time.
-- **Apex from Zero: Code Along** (`apex/`) — the Salesforce backend classes, SOQL queries, controllers, unit tests, and triggers that power the desk.
+Today that's [**LWC & Apex from Zero: Code Along**](https://www.youtube.com/playlist?list=PLX5cm-QNXr8k) (one playlist that builds **Sharma Traders' customer desk** end to end from zero, starting with LWC #1), plus the platform administrator and Agentforce series:
+- **LWC & Apex from Zero: Code Along** ([playlist](https://www.youtube.com/playlist?list=PLX5cm-QNXr8k)) — the front-end Lightning Web Components (`lwc/`, plus [**LWC in 60 Seconds**](https://www.youtube.com/playlist?list=PLWHg6Q9MtOE4)) and the Salesforce backend classes, SOQL queries, controllers, unit tests, triggers, and async jobs (`apex/`, plus [**Apex in 60 Seconds**](https://www.youtube.com/playlist?list=PLEZlgyJjsy4I)) that power the desk.
 - **The Accidental Admin** (`admin/`) — the Salesforce admin series: Kestrel Industrial's practice org, one folder per episode, that you build in a free scratch org of your own.
 - **Agentforce from Zero: Build Along (Specialist Exam Prep)** (`agentforce/`) — Agentforce agents you build by clicking, in a free Developer Edition org of your own, following the Agentforce Specialist exam.
 
