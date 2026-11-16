@@ -1,4 +1,4 @@
-System.debug(DeskGreeter.greet('Ravi Verma'));
-DeskGreeter frontDesk = new DeskGreeter('Sharma Traders');
-System.debug(frontDesk.welcome('Ravi Verma'));
-System.debug(frontDesk.welcome('Pooja Verma'));
+System.debug(DeskGreeter.greet('Ryan Walker'));
+DeskGreeter frontDesk = new DeskGreeter('Miller Supply');
+System.debug(frontDesk.welcome('Ryan Walker'));
+System.debug(frontDesk.welcome('Grace Walker'));

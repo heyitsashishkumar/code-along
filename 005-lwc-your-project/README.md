@@ -4,7 +4,7 @@ The code at the end of **video 5** of *LWC & Apex from Zero: Code Along*, "The E
 
 ## What's in it
 
-The project `sharma-desk` exactly as `SFDX: Create Project` makes it (the Standard template), before any code of ours. Every video from here on adds to this one project.
+The project `miller-desk` exactly as `SFDX: Create Project` makes it (the Standard template), before any code of ours. Every video from here on adds to this one project.
 
 `force-app/main/default/` is where your components and classes will go. VS Code makes its folders empty, and git can't keep empty folders, so they aren't shown here. They come back when you make your own project.
 

@@ -21,7 +21,7 @@ The **Customer Desk** app page, its tab and its place in the Sales app are made 
 
 ## Deploy it
 
-Open this folder in VS Code (File, Open Folder) and connect your org with `SFDX: Authorize an Org`, as in video 5. If you're coding along in your own `sharma-desk` project, that's already done.
+Open this folder in VS Code (File, Open Folder) and connect your org with `SFDX: Authorize an Org`, as in video 5. If you're coding along in your own `miller-desk` project, that's already done.
 
 Then open the command palette (`⇧⌘P` on a Mac, `Ctrl+Shift+P` on Windows) and run `SFDX: Deploy This Source to Org` on the `force-app` folder, or, in the terminal, from inside this folder:
 

@@ -4,14 +4,14 @@ The code at the end of **video 6** of *LWC & Apex from Zero: Code Along*, "Your 
 
 ## What you built
 
-**`customerCard`**, the first piece of Sharma Traders' Customer Desk. A component is a folder with three files (ignore the `__tests__` folder until video 82):
+**`customerCard`**, the first piece of Miller Supply's Customer Desk. A component is a folder with three files (ignore the `__tests__` folder until video 82):
 
 **`force-app/main/default/lwc/customerCard/customerCard.html`** is what it shows:
 
 ```html
 <template>
-    <h1>Ravi Verma</h1>
-    <p>Verma Logistics, Noida</p>
+    <h1>Ryan Walker</h1>
+    <p>Walker Logistics, Austin</p>
 </template>
 ```
 
@@ -35,7 +35,7 @@ export default class CustomerCard extends LightningElement {}
 
 ## Deploy it
 
-Open this folder in VS Code (File, Open Folder) and connect your org with `SFDX: Authorize an Org`, as in video 5. If you're coding along in your own `sharma-desk` project, that's already done.
+Open this folder in VS Code (File, Open Folder) and connect your org with `SFDX: Authorize an Org`, as in video 5. If you're coding along in your own `miller-desk` project, that's already done.
 
 Then open the command palette (`⇧⌘P` on a Mac, `Ctrl+Shift+P` on Windows) and run `SFDX: Deploy This Source to Org` on the `force-app` folder, or, in the terminal, from inside this folder:
 

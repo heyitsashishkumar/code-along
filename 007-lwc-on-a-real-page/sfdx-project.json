@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "sharma-desk",
+  "name": "miller-desk",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "68.0"

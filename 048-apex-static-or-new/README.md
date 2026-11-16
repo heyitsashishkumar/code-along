@@ -16,13 +16,13 @@ public with sharing class DeskGreeter {
 
     public static String greet(String customerName) {
         if (String.isBlank(customerName)) {
-            return 'Namaste, friend!';
+            return 'Hello, friend!';
         }
-        return 'Namaste, ' + customerName + '!';
+        return 'Hello, ' + customerName + '!';
     }
 
     public String welcome(String customerName) {
-        return 'Namaste, ' + customerName
+        return 'Hello, ' + customerName
             + '! Welcome to ' + shopName + '.';
     }
 }
@@ -31,15 +31,15 @@ public with sharing class DeskGreeter {
 **`scripts/apex/048-static-or-new.apex`** calls it both ways:
 
 ```java
-System.debug(DeskGreeter.greet('Ravi Verma'));
-DeskGreeter frontDesk = new DeskGreeter('Sharma Traders');
-System.debug(frontDesk.welcome('Ravi Verma'));
-System.debug(frontDesk.welcome('Pooja Verma'));
+System.debug(DeskGreeter.greet('Ryan Walker'));
+DeskGreeter frontDesk = new DeskGreeter('Miller Supply');
+System.debug(frontDesk.welcome('Ryan Walker'));
+System.debug(frontDesk.welcome('Grace Walker'));
 ```
 
 ## Deploy it
 
-Open this folder in VS Code (File, Open Folder) and connect your org with `SFDX: Authorize an Org`, as in video 5. If you're coding along in your own `sharma-desk` project, that's already done.
+Open this folder in VS Code (File, Open Folder) and connect your org with `SFDX: Authorize an Org`, as in video 5. If you're coding along in your own `miller-desk` project, that's already done.
 
 Then open the command palette (`⇧⌘P` on a Mac, `Ctrl+Shift+P` on Windows) and run `SFDX: Deploy This Source to Org` on the `force-app` folder, or, in the terminal, from inside this folder:
 

@@ -7,13 +7,13 @@ public with sharing class DeskGreeter {
 
     public static String greet(String customerName) {
         if (String.isBlank(customerName)) {
-            return 'Namaste, friend!';
+            return 'Hello, friend!';
         }
-        return 'Namaste, ' + customerName + '!';
+        return 'Hello, ' + customerName + '!';
     }
 
     public String welcome(String customerName) {
-        return 'Namaste, ' + customerName
+        return 'Hello, ' + customerName
             + '! Welcome to ' + shopName + '.';
     }
 }

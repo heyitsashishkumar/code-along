@@ -4,7 +4,7 @@ The code from the **Freestyle Cyber Hub** code-along playlists. **One folder per
 
 ## LWC & Apex from Zero: Code Along
 
-One playlist that builds Sharma Traders' **Customer Desk** from zero: the screens in LWC, and the Apex behind them. Videos with no code have no folder. More rows appear here as each video is published.
+One playlist that builds Miller Supply's **Customer Desk** from zero: the screens in LWC, and the Apex behind them. Videos with no code have no folder. More rows appear here as each video is published.
 
 | Video | Title | Folder |
 |---|---|---|
@@ -66,4 +66,4 @@ The LWC and Apex topics follow Salesforce's own sample galleries, [trailheadapps
 
 ---
 
-Salesforce, Lightning, Apex and Agentforce are trademarks of Salesforce, Inc. This repo and the channel are not affiliated with, sponsored or endorsed by Salesforce. Sharma Traders, Joris's cycle shop and their customers are made up.
+Salesforce, Lightning, Apex and Agentforce are trademarks of Salesforce, Inc. This repo and the channel are not affiliated with, sponsored or endorsed by Salesforce. Miller Supply, Joris's cycle shop and their customers are made up.

@@ -4,13 +4,13 @@ The code at the end of **video 8** of *LWC & Apex from Zero: Code Along*, "Show 
 
 ## What you built
 
-**`customerGreeting`**, placed under `customerCard` on the Customer Desk page. It shows **Namaste, friend!**
+**`customerGreeting`**, placed under `customerCard` on the Customer Desk page. It shows **Hello, friend!**
 
 **`customerGreeting.html`**:
 
 ```html
 <template>
-    <p>Namaste, {name}!</p>
+    <p>Hello, {name}!</p>
 </template>
 ```
 
@@ -28,7 +28,7 @@ export default class CustomerGreeting extends LightningElement {
 
 ## Deploy it
 
-Open this folder in VS Code (File, Open Folder) and connect your org with `SFDX: Authorize an Org`, as in video 5. If you're coding along in your own `sharma-desk` project, that's already done.
+Open this folder in VS Code (File, Open Folder) and connect your org with `SFDX: Authorize an Org`, as in video 5. If you're coding along in your own `miller-desk` project, that's already done.
 
 Then open the command palette (`⇧⌘P` on a Mac, `Ctrl+Shift+P` on Windows) and run `SFDX: Deploy This Source to Org` on the `force-app` folder, or, in the terminal, from inside this folder:
 
