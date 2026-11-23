@@ -1,0 +1,316 @@
+# Troubleshooting · ep-02b · While you're in there
+
+The traps in episode 2, part 2 come first, then the errors from building this folder (the scripts, the time zone command, and moving an org you already have). Below them are episode 1's traps and the setup video's errors, because a new org from this folder runs the same steps. Part 1's currency traps are in [ep-02a's TROUBLESHOOTING.md](../ep-02a/TROUBLESHOOTING.md). The setup video's messages were copied from a real terminal (Salesforce CLI 2.158.7); the ones new in `ep-02a` and `ep-02b` were copied from a real terminal too (Salesforce CLI 2.138.6), when these folders were tested in fresh scratch orgs. The video was made on a Mac. Nothing was tested on Windows, so a Windows message is described here, never quoted. If yours isn't listed, paste the exact error in the video's comments and say whether you're on Windows or Mac.
+
+## My own time zone still says Los Angeles
+
+You changed the company's Default Time Zone to Chicago, but your picture, Settings, Advanced User Details still says **(GMT-08:00) Pacific Standard Time (America/Los_Angeles)**.
+
+- **Why:** the company's default is only where **new** users start. Changing it later doesn't move anyone who already exists, you included.
+- **Fix:** on Advanced User Details, click **Edit**, set Time Zone to **(GMT-06:00) Central Standard Time (America/Chicago)**, Save. Or run `sf apex run --file scripts/add-users.apex`, which sets yours.
+
+## The time zone says Daylight, not Standard
+
+In summer the same choice reads **(GMT-05:00) Central Daylight Time (America/Chicago)**, and London reads British Summer Time. It's the same time zone: the label follows the date. What matters is the name in brackets, **America/Chicago**.
+
+## "Duplicate Username"
+
+Saving Tom on the New User form fails with **Duplicate Username**. Salesforce's message goes on: "The username already exists in this or another Salesforce organization. Usernames must be unique across all Salesforce organizations. To resolve, use a different username (it doesn't need to match the user's email address)."
+
+- **Why:** a username must be unique across **every** Salesforce org in the world, not just yours. `tom.ashworth@example.com`, or the video's `tom.ashworth.4821@kestrel.example`, is taken.
+- **Fix:** add a number only you would pick before the `@`, for example `tom.ashworth.73519@kestrel.example`, and save again. The users script does this for you, and tries another number if one is taken.
+
+## There's no Salesforce Platform license in the list
+
+The **User License** list on the New User form offers Chatter External, Chatter Free, Company Communities, Identity, **Salesforce** and Salesforce Integration, and no **Salesforce Platform**.
+
+- **Why:** the list shows only licenses with seats left, and an Enterprise Edition scratch org has no Salesforce Platform licenses at all. The video teaches Salesforce Platform as exam knowledge only.
+- **Fix:** none needed. Pick **Salesforce** for Tom and Lena.
+
+## "Not enough Salesforce licenses"
+
+The users script stops, and its message starts with `System.IllegalArgumentException: Not enough Salesforce licenses:`, then how many are left and how many it needs.
+
+- **Why:** your org has 5 Salesforce licenses. You, Tom and Lena use 3. Extra users you made while practising use the rest.
+- **Fix:** Setup, Users, open a practice user you don't need, Edit, untick **Active**, Save. A deactivated user frees their license. Then run the script again.
+
+## There's no Login link next to my users
+
+The Users list has no **Login** link next to Tom or Lena.
+
+- **Why:** **Administrators Can Log in as Any User** is off. A new org starts with it off.
+- **Fix:** Setup, Quick Find `login access`, Login Access Policies, tick **Administrators Can Log in as Any User**, Save. Or deploy this folder: `settings/Security.settings-meta.xml` turns it on. Then reload the Users list.
+
+## Logged in as Tom, I can't see Danny's deal
+
+As Tom, Opportunities is empty, and searching for `Brookfield` finds nothing.
+
+- **Why:** a new Enterprise Edition org starts Account and Opportunity sharing at **Private**: each person sees only the records they own, and Danny's deal is yours (Owen's). Our org was changed off screen before recording (see the README's sharing note). Sharing is taught in a later episode.
+- **Fix:** log out as Tom. Setup, Quick Find `sharing`, Sharing Settings, Edit. Set **Account** to **Public Read Only**, then **Opportunity** to **Public Read Only**, Save. Salesforce won't take Opportunity Public Read Only while Account is still Private, so set Account first, or both at once. Or deploy this folder: it sets both. Wait a minute while Salesforce recalculates sharing, then log in as Tom again.
+
+## Danny's deal shows dollars, with no pounds in brackets
+
+As Tom, the deal reads **USD 50,000.00** and nothing in brackets.
+
+- **Why:** Tom's own Currency isn't GBP, so there's nothing to convert to. The brackets show the currency of whoever is looking.
+- **Fix:** log out as Tom. Setup, Users, Tom Ashworth, Edit, Currency **GBP - British Pound**, Save.
+
+## The Default business hours still say Pacific
+
+Business Hours lists **Default** with **(GMT-08:00) Pacific Standard Time (America/Los_Angeles)**.
+
+- **Why:** Default is a separate record from Manchester Support Hours. Episode 2 doesn't change it, and neither does changing the company's time zone.
+- **Fix:** none needed. Manchester Support Hours has its own time zone, Europe/London.
+
+## I can't delete business hours
+
+There's no Delete for business hours.
+
+- **Why:** Salesforce doesn't let you delete business hours, only deactivate them.
+- **Fix:** made one with the wrong name? Edit it and fix the name, or untick **Active**. Check the name before you save a new one. This is why the video tells you to check first.
+
+## The holiday doesn't stop Manchester's clock
+
+Spring Bank Holiday is there, but its **Business Hours** list is empty.
+
+- **Why:** a holiday counts only for the business hours it's linked to. Not linked, not counted.
+- **Fix:** open the holiday, under Business Hours click **Add/Remove**, move **Manchester Support Hours** to the selected list, Save.
+
+## Tom and Lena got no welcome email
+
+Nothing arrived, and nothing will.
+
+- **Why:** their emails are made up. `example.com` is reserved for examples, so no mail reaches a real person. The users script also sends no welcome email.
+- **Fix:** none needed. You test as Tom with the **Login** link in the Users list, which needs no password.
+
+## "No matching record found" when setting the time zone
+
+`sf data update record --sobject Organization ...` fails with:
+
+```
+Updating Record... Error
+Error (DataRecordGetNoRecord): No matching record found.
+```
+
+- **Why:** the command looks for the Organization record whose name is exactly `Kestrel Industrial`, and yours has another name. You renamed the org in Company Information, or typed the name differently.
+- **Fix:** check the name on Company Information and put that name between the single quotes. Or do the clicks: Company Information, Edit, Default Time Zone, Save.
+
+## "bad value for restricted picklist field"
+
+`sf data update record --sobject Organization ...` fails with something like:
+
+```
+Updating Record... Failed
+Error (1): Time Zone: bad value for restricted picklist field: America/Chicag
+```
+
+- **Why:** the time zone's name has a typo. Salesforce accepts only its own list of names.
+- **Fix:** copy the command again: the value is exactly `TimeZoneSidKey=America/Chicago`.
+
+## "Must have at least one default business hours."
+
+Deploying fails on `BusinessHours` (type `Settings`) with the problem `Must have at least one default business hours.`
+
+- **Why:** you edited `settings/BusinessHours.settings-meta.xml` and removed the **Default** entry. Salesforce wants the default business hours listed in that file whenever it's deployed. We hit this ourselves while building the folder.
+- **Fix:** put the Default entry back (it's in this folder on GitHub). Nothing was saved: a failed deploy changes nothing.
+
+## "Invalid field DefaultCurrencyIsoCode for User" or "Invalid field CurrencyIsoCode for Opportunity"
+
+The users script fails with:
+
+```
+Error (executeRuntimeFailure): Execution failed at this code:
+
+System.SObjectException: Invalid field DefaultCurrencyIsoCode for User
+```
+
+or the deals script with `System.SObjectException: Invalid field CurrencyIsoCode for Opportunity`.
+
+- **Why:** you ran the script before `sf project deploy start`. Those fields exist only once multiple currencies are on, and the deploy turns them on.
+- **Fix:** run `sf project deploy start` (with `--ignore-conflicts` in the org you already have), then the script again. Nothing was saved by the failed run: your time zone too is as it was.
+
+## "No account called Brookfield Water"
+
+Running the deals script fails with:
+
+```
+Error (executeRuntimeFailure): Execution failed at this code:
+
+System.IllegalArgumentException: No account called Brookfield Water. Load it first: sf data import tree --plan data/plan.json
+```
+
+- **Why:** the two deals belong to Brookfield Water, and your org doesn't have an account with that name. In a new org you skipped the load step, or ran the script before it.
+- **Fix:** run `sf data import tree --plan data/plan.json` once, then the script again. In the org you already have, check the account's name in **Accounts**: it must be exactly **Brookfield Water**.
+
+## "No default environment found" in the org you already have
+
+In this folder, `sf project deploy start --ignore-conflicts` (or any other command) fails with:
+
+```
+Error (NoDefaultEnvError): No default environment found. Use -o or --target-org to specify an environment.
+```
+
+- **Why:** `--set-default` saved your `kestrel` org as the default for the folder you created it from (`ep-01` or `ep-02a`, for example), and for that folder only. This folder has no default yet.
+- **Fix:** in this folder, run `sf config set target-org kestrel` once. Every command here then uses that org.
+
+## My screen doesn't look like the video's tabs
+
+The tabs along the top change with the **app**. The video uses an app whose name is at the **top left**, next to the grid icon. If your tabs differ, click the grid icon (the App Launcher) and pick the same app, or search for what you need, for example **Accounts**.
+
+## Setup opened in a new tab
+
+Clicking the gear, then **Setup**, opens Setup in a **new browser tab**. That's normal. Your first tab is still there. Close the Setup tab, or click back to the first one.
+
+## My user is called "User User"
+
+A new scratch org names its first user **User User**. Episode 1 renames you to **Owen Hartley** (Setup, Quick Find `Users`, Users, Edit). In a hurry, run the script: from this folder, `sf apex run --file scripts/rename-admin-user.apex`. It renames whoever runs it, so it needs no username.
+
+## Accounts also shows "Sample Account for Entitlements"
+
+Salesforce makes that account itself in every new org, even with sample data off. It's not yours and it's not a mistake. Leave it alone.
+
+## The license numbers don't match the video
+
+Episode 1's video shows **Developer Edition** and **Salesforce: 2 total, 1 used** (Setup, Company Information, User Licenses). Your org is **Enterprise Edition** from this definition file, like episode 2's video, so after episode 2 it shows **Salesforce: 5 total, 3 used**: you, Tom and Lena. Each user you add takes one more.
+
+## The Users list has more users than Tom, Lena and me
+
+Setup, then Users, also lists **Chatter Expert**, **Integration User** and **Security User**. Salesforce makes them itself, and none of them uses one of your Salesforce licenses. Don't deactivate them.
+
+## "There are changes in the org that conflict with the local changes you're trying to deploy"
+
+Deploying a folder into an org you already deployed an **earlier folder** into fails with a table whose State says `Conflict` (for example for `Kestrel_Practice`), then:
+
+```
+Error (1): There are changes in the org that conflict with the local changes you're trying to deploy.
+```
+
+- **Why:** the CLI tracks changes per folder. This folder has never seen your org, and the org already holds a `Kestrel_Practice` that another folder put there.
+- **Fix:** run `sf project deploy start --ignore-conflicts`, which tells the CLI to send this folder's files anyway. In `ep-02b` that's how the fiscal year, the login policy, the business hours and the sharing reach the org you already have.
+- A **fresh** scratch org made from this folder doesn't hit this.
+
+## I have two Brookfield Water accounts
+
+You created Brookfield Water by hand and then ran `sf data import tree --plan data/plan.json`, or you ran the import twice. Open **Accounts**, open the extra one, and delete it (the arrow next to Edit, then Delete). Load it only once.
+
+## "command not found: sf"
+
+You type `sf --version` and get:
+
+```
+zsh: command not found: sf
+```
+
+- **Why:** the terminal was opened before you installed the Salesforce CLI. It still has the old list of places to look for programs (the PATH), so it doesn't know `sf` yet.
+- **Fix:** close that terminal and open a new one, then run `sf --version` again. It prints a version, for example `@salesforce/cli/2.158.7 darwin-arm64 node-v26.0.0`. Yours may be newer, and the `node` part may differ.
+- **On Windows** you'll see a similar message (a "not recognized" error). The fix is the same: close every PowerShell window, Command Prompt and VS Code, then open them again.
+- Still not found? Install the CLI one way only. Installing it with the installer **and** with npm leads to confusing path problems.
+- Installed it with npm? The CLI needs **Node.js 22 or newer**. Check with `node --version`, and update Node.js first if it's older.
+
+## The login asks for a verification code
+
+You run `sf org login web --set-default-dev-hub --alias my-devhub`, type the username and password on Salesforce's login page, and instead of the **Allow** page it asks for a **verification code**.
+
+- **Why:** Salesforce checks it's really you when you log in from a browser or network it hasn't seen with that user before. It sends the code by email.
+- **Fix:** open the email sent to your org user's address (for a hands-on org, the same address your password-reset email went to), type the code, and verify. Then click **Allow**. The terminal says `Successfully authorized`, with your username and org ID.
+- No email? Check spam, and give it a minute before asking for a new code.
+
+## "The specified org ... is not a Dev Hub."
+
+Creating the scratch org fails with a message that ends: `is not a Dev Hub.`
+
+- **Why:** the org you logged in to isn't a Dev Hub. Either you haven't turned Dev Hub on (Setup, Quick Find, **Dev Hub**, turn on **Enable Dev Hub**), or you logged in to a different org.
+- **Fix:** turn Dev Hub on in your hands-on org (Setup, Quick Find, **Dev Hub**, the **Enable Dev Hub** toggle), then log in again from your home folder: `sf org login web --set-default-dev-hub --alias my-devhub`.
+- No **Dev Hub** in Quick Find? Then you're not in your hands-on org. Salesforce's guide says Dev Hub can't be turned on in a sandbox.
+- Once Dev Hub is on, it can't be turned off (the page says so: "You can't disable this setting"). That's fine in a practice org. At work, ask first.
+
+## "No default dev hub found"
+
+Creating the scratch org fails with:
+
+```
+Error (NoDefaultDevHubError): No default dev hub found. Use -v or --target-dev-hub to specify an environment.
+```
+
+- **Why:** the CLI doesn't know which org is your Dev Hub. You haven't logged in with `--set-default-dev-hub`, or you did it inside a project folder, where it's saved for that one folder only.
+- **Fix:** go back to your home folder and connect again: `sf org login web --set-default-dev-hub --alias my-devhub`. Then go into the episode's folder and run the create command again.
+
+## "No file found at config/project-scratch-def.json"
+
+Creating the scratch org fails with:
+
+```
+Error (2): Parsing --definition-file
+	No file found at config/project-scratch-def.json
+```
+
+- **Why:** you're not inside the episode's folder, so there's no `config/` here. (This one fails before any org is made.)
+- **Fix:** `cd` into the folder, for example `cd code-along/admin/ep-00`, then run the command again. `ls` (or `dir` on Windows) should list `config`, `force-app` and `sfdx-project.json`.
+
+## "No default environment found"
+
+`sf project deploy start`, `sf org assign permset` or `sf org open` fails with:
+
+```
+Error (NoDefaultEnvError): No default environment found. Use -o or --target-org to specify an environment.
+```
+
+- **Why:** you're outside the episode's folder. `--set-default` saved your scratch org as the default for **that folder only**, so everywhere else the CLI has no default org.
+- **Fix:** go back into the episode's folder and run it again. Or name the org: `sf project deploy start --target-org kestrel`.
+- `sf org open --target-org kestrel` works from any folder.
+
+## "reached its active scratch org limit"
+
+Creating the scratch org fails with a message like:
+
+```
+The signup request failed because this organization has reached its active scratch org limit
+```
+
+- **Why:** your free hands-on org, as a Dev Hub, keeps only a few scratch orgs at a time (Salesforce's guide says a maximum of three active; yours may allow more). An old org of yours is still counting.
+- **Fix:** run `sf org list`, then delete one you don't need: `sf org delete scratch --target-org <alias> --no-prompt`. An org that has expired can keep counting for a while. If it still fails, wait a day: the daily allowance is a rolling 24 hours.
+
+## "Duplicate PermissionSetAssignment"
+
+Running `sf org assign permset --name Kestrel_Practice` a second time prints a table called **Failures** with `Duplicate PermissionSetAssignment`.
+
+- **Why:** you already have that permission set. It isn't a problem.
+- **Fix:** nothing to do. Carry on.
+
+## "No file found at data/plan.json"
+
+Running `sf data import tree --plan data/plan.json` fails with `No file found at data/plan.json`.
+
+- **Why:** the folder has no records to load. `ep-00` has none. Skip that step.
+- **Fix:** none needed. If a later folder does have `data/` and you still see it, you're not in that folder (see "No file found" above).
+
+## There's no "All Accounts" list
+
+In a brand-new scratch org, the **Accounts** tab doesn't let you choose an **All Accounts** list yet, so you can't open **Sample Account for Entitlements** from a list.
+
+- **Fix:** search for it. Click the search box at the top, type `Sample`, press Enter, then click **Accounts** in the results. **Sample Account for Entitlements** is there. Salesforce makes it itself.
+- The same works for any record: search for it by name.
+
+## Other things that aren't errors
+
+- **"Warning: @salesforce/cli update available"** is only a hint that a newer CLI exists. Nothing breaks.
+- **"No changes to deploy"** means the org already has everything in the folder. Running `sf project deploy start` twice is safe.
+- **`sf org open`** prints "Waiting to resolve the Lightning Experience-enabled custom domain..." for a few seconds before the browser opens.
+- A new scratch org's first user is named **User User**, and its time zone may say Los Angeles. Both are normal.
+
+## Behind a college or office network
+
+If the browser login never comes back to the terminal on a college or office network, a proxy may be blocking it. Salesforce's install guide says to set the `HTTP_PROXY` and `HTTPS_PROXY` environment variables to your proxy's address. We haven't reproduced this one ourselves. Ask your network admin for the proxy address.
+
+## Your free org: a hands-on org from Trailhead
+
+- **Make it on Trailhead.** Sign up or log in at [trailhead.com](https://trailhead.com) (free). Open any hands-on challenge (every project is hands-on: Learn, then Projects), click the arrow next to **Launch**, and choose **Create Playground** (it may say **Create a Trailhead Playground**). It takes about 3 to 4 minutes. A Trailhead Playground is a hands-on org, and Salesforce Help says it's "actually a Developer Edition".
+- **The username:** launch the org and open the **Get Your Login Credentials** tab. Write down the username shown there. No such tab? Open the App Launcher and choose **Playground Starter**, or go to Setup, Quick Find `Users`, Users, and note your username there.
+- **The password:** you need one for the CLI login, and a new playground opens from Trailhead without one. On the same tab, click **Reset My Password**, open the email, click its link and set a password. Do it **before** your first `sf org login web`. (No tab? In Setup, Users, tick your name and click **Reset Password(s)**.)
+- The username **looks like an email address, but it isn't your inbox**. Log in with that username, not with your Trailhead email.
+- **Never change that username.** Trailhead uses it to check your work in challenges.
+- Write the username and the password in a password manager, never on a sticky note. Can't find the reset email? Check spam.
+
+## Your free org can be deleted if nobody logs in
+
+Free orgs that nobody logs into get deleted. Salesforce Help says a Developer Edition org that hasn't been logged into for **45 days** is deleted, and a hands-on org is a Developer Edition. Salesforce emails you first, and logging in during the first 14 days after the warning brings the org back. Your Dev Hub is that free org, so log in at least once a month. If it's gone, make a new hands-on org on Trailhead and do steps two to four of the setup video again.

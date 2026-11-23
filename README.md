@@ -81,6 +81,8 @@ Each folder is Kestrel Industrial's practice org **at the end of one episode**, 
 |---|---|---|
 | Before episode 1 | Set up your own free practice org: Dev Hub, the Salesforce CLI, a scratch org from `config/project-scratch-def.json`, and the `Kestrel_Practice` permission set | [admin/ep-00](admin/ep-00/) |
 | Episode 1: You're the Salesforce guy now. Same metadata as `ep-00`, plus the account Brookfield Water and a script that renames you to Owen Hartley | [admin/ep-01](admin/ep-01/) |
+| Episode 2, part 1: Manchester wants pounds. Multiple currencies on (USD corporate, GBP and EUR), plus a script that adds two deals to Brookfield Water | [admin/ep-02a](admin/ep-02a/) |
+| Episode 2, part 2: While you're in there. Fiscal year from April, login as any user, Manchester Support Hours and a holiday, Account and Opportunity sharing Public Read Only, plus a script that adds Tom and Lena, and the company's time zone set to Chicago | [admin/ep-02b](admin/ep-02b/) |
 
 ## Agentforce from Zero (`agentforce/`)
 
