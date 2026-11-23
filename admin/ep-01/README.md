@@ -28,6 +28,21 @@ This folder was added in two commits: a plain copy of `ep-00` (`copy ep-00 to ep
 
 To compare on your own computer: `git diff --no-index admin/ep-00 admin/ep-01`.
 
+## By clicks (no code, nothing to deploy)
+
+In your own hands-on org (see [`ep-00`](../ep-00/README.md#by-clicks-no-code-nothing-to-deploy)), do these in order. They're the video's four "Try it now" cards.
+
+1. **Create the account.** Click the dotted grid (**App Launcher**), choose **Service**, then the grid again and choose **Sales** to feel the difference between apps. In Sales, open **Accounts**, then **New**. Account Name: **Brookfield Water**. Phone: **(312) 555-0142**. **Save**.
+   *You should see:* the Brookfield Water record. If you can't find the Accounts tab, check the app name at the top left: you may still be in Service.
+2. **Look at your licenses.** Click the gear, then **Setup**. In Quick Find, type `company` and open **Company Information**. Under **User Licenses**, look at the **Salesforce** row: Total, Used, Remaining.
+   *You should see:* **2 total, 1 used** in a hands-on org (a Developer Edition). Your org isn't called Kestrel Industrial, and that doesn't matter.
+3. **Rename yourself.** In Quick Find, type `users` and open **Users**. Find your own row (Profile **System Administrator**) and click **Edit**. First Name: **Owen**. Last Name: **Hartley**. **Save**.
+   *You should see:* **Owen Hartley** in the user menu at the top right. It changes only the name inside your org. You can keep your own name instead, but later steps and videos say "Owen".
+4. **Look at a field, change nothing.** Setup, **Object Manager**. In Quick Find, type `account` and open **Account**. Open **Fields & Relationships** and find **Phone**.
+   *You should see:* the Phone field, type Phone. Look only. Episode 3 builds on this page.
+
+**Differences from the scratch org:** your org may already have more users than a scratch org's four, and an **All Accounts** list view that a scratch org lacks. Neither matters. Nothing in this episode needs code.
+
 ## Deploy it
 
 Do the one-time setup from the setup video first (Dev Hub, the CLI, `sf org login web --set-default-dev-hub --alias my-devhub` in your home folder, and this repo). Then pick a path.

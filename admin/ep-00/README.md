@@ -29,6 +29,18 @@ Nothing. This is the starting point, so there's nothing to compare it with. From
 
 Not for `ep-00` (it's the first folder). From `ep-01` on, each folder is added in two commits: a plain copy of the folder before it, then the episode's changes. The second commit's page on GitHub shows exactly what that episode changed.
 
+## By clicks (no code, nothing to deploy)
+
+Not here for the code? Then `ep-00` asks very little of you. A Trailhead hands-on org is a Developer Edition, and it already is your practice org.
+
+1. On trailhead.com, open any hands-on challenge. Next to its **Launch** button, open the list of orgs and choose **Create Playground**. It takes a few minutes.
+2. Click **Launch**, then open the tab **Get Your Login Credentials**. Note the username and, if you don't know the password, click **Reset My Password**. Keep both private: never post them or paste them in a comment.
+3. Log in at least once a month. Salesforce deletes a Developer Edition nobody has logged into for 45 days.
+
+That's all. Skip Dev Hub, the CLI, the repo and every command on this page. **You should see** a brand-new org with no Brookfield Water yet. It will not be named Kestrel Industrial and its user won't say "User User": you'll set those names in the next episode's clicks. Start at [`ep-01`'s "By clicks"](../ep-01/README.md#by-clicks-no-code-nothing-to-deploy).
+
+**What's different in a hands-on org:** it's one org that keeps every change, so there's no throwing it away and starting again. It has **2 Salesforce licenses** (the practice orgs in this repo have 5), which leaves room for one more full user. Episode 2 part 2 tells you what to do about that.
+
 ## Deploy it
 
 **Two paths. Pick one.**

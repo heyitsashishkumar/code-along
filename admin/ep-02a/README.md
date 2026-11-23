@@ -39,6 +39,20 @@ This folder was added in two commits: a plain copy of `ep-01` (`copy ep-01 to ep
 
 To compare on your own computer: `git diff --no-index admin/ep-01 admin/ep-02a`.
 
+## By clicks (no code, nothing to deploy)
+
+Finished the clicks of [`ep-01`](../ep-01/README.md#by-clicks-no-code-nothing-to-deploy) in your own hands-on org? Then do part 1's four "Try it now" cards, in order.
+
+> **One-way switch:** step 2 turns on **multiple currencies**, and it can never be switched off. Your hands-on org keeps every change, and you can't undo this one, so be sure. Never do it in a work org without asking first.
+
+1. **Danny's deal.** In the **Sales** app, open **Opportunities**, then **New**. Opportunity Name: **Brookfield Water - pumps**. Account Name: **Brookfield Water**. Close Date: **15 December 2026** (any day next month works). Stage: **Prospecting**. Amount: **50,000**. **Save**.
+2. **Switch on multiple currencies.** Click the gear, then **Setup**. In Quick Find, type `company` and open **Company Information**, then **Edit**. Check that **Currency Locale** says **English (United States) - USD**. Tick **Activate Multiple Currencies** and **Save**.
+   *Watch-only:* don't change Currency Locale. If you did, set it back to **English (United States) - USD**.
+3. **Add pounds and euros.** In Quick Find, type `currencies` and open **Manage Currencies**. Click **New**, choose **GBP - British Pound**, Conversion Rate **0.79**, **Save**. Click **New** again: **EUR - Euro**, **0.92**, **Save**. Leave **Advanced Currency Management** off (don't click Enable).
+   *You should see:* USD as the corporate currency, and GBP and EUR below it. A currency can be deactivated but never deleted, so check the code before you save.
+4. **Tom's team's deal, in pounds.** **Opportunities**, **New**. Opportunity Name: **Pennine Pumps - Manchester**. Account Name: **Brookfield Water**. **Opportunity Currency:** **GBP - British Pound** (this field exists only now that multiple currencies are on). Close Date **15 December 2026**, Stage **Prospecting**, Amount **10,000**. **Save**. Then click your picture, **Settings**, **Advanced User Details**, and find **Currency**: it says USD. Look, don't change.
+   *You should see:* the amount shown as **GBP 10,000.00**, with the dollar equivalent beside it on the record's page.
+
 ## Deploy it
 
 Do the one-time setup from the setup video first (Dev Hub, the CLI, `sf org login web --set-default-dev-hub --alias my-devhub` in your home folder, and this repo). Then pick a path.
