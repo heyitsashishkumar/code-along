@@ -52,6 +52,23 @@ This folder was added in two commits: a plain copy of `ep-02a` (`copy ep-02a to 
 
 To compare on your own computer: `git diff --no-index admin/ep-02a admin/ep-02b`. To see all of episode 2: `git diff --no-index admin/ep-01 admin/ep-02b`.
 
+## By clicks (no code, nothing to deploy)
+
+Finished the clicks of [`ep-02a`](../ep-02a/README.md#by-clicks-no-code-nothing-to-deploy)? Then do part 2's five "Try it now" cards, in order.
+
+1. **Time zones.** Click the gear, then **Setup**. Quick Find `company`, **Company Information**, **Edit**. Default Time Zone: **(GMT-06:00) Central Standard Time (America/Chicago)**, **Save**. Then click your picture, **Settings**, **Advanced User Details**, **Edit**, Time Zone: the same, **Save**. (In summer it reads Central Daylight Time.) Changing the company's default doesn't move users who already exist, which is why you do yours separately.
+2. **Add Tom and Lena.** Quick Find `users`, **Users**, **New User**. Tom: First Name **Tom**, Last Name **Ashworth**, an email you can read or a made-up one, User License **Salesforce**, Profile **Standard User**, Time Zone **(GMT+00:00) Greenwich Mean Time (Europe/London)**, Locale **English (United Kingdom)**, Language **English**, Currency **GBP - British Pound**. Username: any name in email form that no one else has, such as `tom.ashworth.4821@yourname.example`: a username must be unique in all of Salesforce, so if it says "duplicate username", pick another number. Leave **Generate new password and notify user immediately** unticked if you don't want an email. **Save**. Then Lena the same way: Last Name **Vogel**, Time Zone **(GMT+01:00) Central European Standard Time (Europe/Berlin)**, Locale **German (Germany)**, Language **English**, Currency **EUR - Euro**. Leave **Marketing User** unticked.
+3. **Log in as Tom.** Quick Find `login access`, open **Login Access Policies**, **Edit**, tick **Administrators Can Log in as Any User**, **Save**. Back in **Users**, click **Login** next to Tom Ashworth. Open **Opportunities**, then **Brookfield Water - pumps**. Then click the user menu and **Log out as Tom Ashworth**, to get back to your own login.
+   *You should see:* Tom's name in a yellow banner at the top. Log out as Tom before going back to Setup.
+4. **Fiscal year.** Quick Find `fiscal`, open **Fiscal Year**. Choose **Standard Fiscal Year**, Start Month **April**, Based On **The ending month** (so April 2026 to March 2027 is FY 2027), **Save**. Don't use Custom Fiscal Years.
+5. **Business hours and a holiday.** Quick Find `business hours`, **Business Hours**, **New**. Name **Manchester Support Hours**, tick **Active**, Time Zone **(GMT+00:00) Greenwich Mean Time (Europe/London)**, Monday to Friday **8:00 AM** to **6:00 PM**, Saturday and Sunday closed (leave blank), **Save**. Business hours can't be deleted, only deactivated, so check the name first. Then Quick Find `holidays`, **Holidays**, **New**. Name **Spring Bank Holiday**, Date **5/31/2027**, **All Day**, **Save**. On the holiday's page, open **Business Hours**, **Add/Remove**, and add **Manchester Support Hours**.
+
+**What a hands-on org does differently**
+
+- **Licenses.** A hands-on org has **2 Salesforce licenses**, and you use one. Give **Tom** the **Salesforce** license: he opens an opportunity, which a Salesforce Platform license can't. For **Lena**, look at the **User License** picklist: if **Salesforce Platform** is listed, use it for now (she only needs the full kind in a later episode, for leads), and note she can't see deals. If it isn't listed, skip Lena for now. At work, check **Setup, Company Information, User Licenses** before you add anyone. Salesforce won't offer a license with no seats left.
+- **Sharing.** The scratch org needs its Account and Opportunity sharing set to **Public Read Only** off screen, so Tom can open Danny's deal. A hands-on Developer Edition normally starts more open, so Tom should be able to open it already. If he can't (he sees "insufficient privileges"), go to Setup, Quick Find `sharing`, **Sharing Settings**, **Edit**, and set Account and then Opportunity **Default Internal Access** to **Public Read Only**. Check first before you change any work org.
+- **Permanent things.** Multiple currencies and business hours can't be undone, as in the scratch org.
+
 ## Deploy it
 
 Do the one-time setup from the setup video first (Dev Hub, the CLI, `sf org login web --set-default-dev-hub --alias my-devhub` in your home folder, and this repo). Then pick a path.
