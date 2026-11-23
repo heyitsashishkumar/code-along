@@ -35,7 +35,7 @@ ep-02a/
 
 ## See the changes on GitHub
 
-This folder was added in two commits: a plain copy of `ep-01` (`copy ep-01 to ep-02a`), then the episode's changes. Open EP 2 part 1's commit, **EP 2 part 1: multiple currencies, GBP and EUR, add-deals script, README and troubleshooting**, in the [folder's history](https://github.com/heyitsashishkumar/code-along/commits/main/admin/ep-02a): its page shows exactly what part 1 changed, green lines added, red lines removed.
+This folder was added in two commits: a plain copy of `ep-01` (`copy ep-01 to ep-02a`), then the episode's changes. Open EP 2 part 1's commit, [EP 2 part 1: multiple currencies, GBP and EUR, add-deals script, README and troubleshooting](https://github.com/heyitsashishkumar/code-along/commit/7c24aff9fc2e0cf932d030e038dae1972640263a): its page shows exactly what part 1 changed, green lines added, red lines removed. (Later commits in the [folder's history](https://github.com/heyitsashishkumar/code-along/commits/main/admin/ep-02a) are fixes to the docs, not the episode.)
 
 To compare on your own computer: `git diff --no-index admin/ep-01 admin/ep-02a`.
 

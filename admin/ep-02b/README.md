@@ -48,7 +48,7 @@ Two of these can't be undone: business hours can't be deleted (only deactivated)
 
 ## See the changes on GitHub
 
-This folder was added in two commits: a plain copy of `ep-02a` (`copy ep-02a to ep-02b`), then the episode's changes. Open EP 2 part 2's commit, **EP 2 part 2: time zones, Tom and Lena, login access, fiscal year, business hours, sharing**, in the [folder's history](https://github.com/heyitsashishkumar/code-along/commits/main/admin/ep-02b): its page shows exactly what part 2 changed, green lines added, red lines removed.
+This folder was added in two commits: a plain copy of `ep-02a` (`copy ep-02a to ep-02b`), then the episode's changes. Open EP 2 part 2's commit, [EP 2 part 2: time zones, Tom and Lena, login access, fiscal year, business hours, sharing](https://github.com/heyitsashishkumar/code-along/commit/fb1bbc0960431a2428a0cd2df0c2c104b802b1e8): its page shows exactly what part 2 changed, green lines added, red lines removed. (Later commits in the [folder's history](https://github.com/heyitsashishkumar/code-along/commits/main/admin/ep-02b) are fixes to the docs, not the episode.)
 
 To compare on your own computer: `git diff --no-index admin/ep-02a admin/ep-02b`. To see all of episode 2: `git diff --no-index admin/ep-01 admin/ep-02b`.
 
