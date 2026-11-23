@@ -66,6 +66,7 @@ Error (NoDefaultEnvError): No default environment found. Use -o or --target-org 
 
 - **Why:** you're outside the episode's folder. `--set-default` saved your scratch org as the default for **that folder only**, so everywhere else the CLI has no default org.
 - **Fix:** go back into the episode's folder and run it again. Or name the org: `sf project deploy start --target-org kestrel`.
+- Moved on to a **new folder** with the org you already have? That folder has no default yet. Run `sf config set target-org kestrel` in it once.
 - `sf org open --target-org kestrel` works from any folder.
 
 ## "reached its active scratch org limit"
