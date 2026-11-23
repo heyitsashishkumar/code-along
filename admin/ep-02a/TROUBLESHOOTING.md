@@ -1,6 +1,85 @@
-# Troubleshooting · ep-01 · You're the Salesforce guy now
+# Troubleshooting · ep-02a · Manchester wants pounds
 
-The traps in episode 1 come first. Below them are the setup video's errors, with the exact messages, copied from a real terminal (Salesforce CLI 2.158.7). The video was made on a Mac. Nothing was tested on Windows, so a Windows message is described here, never quoted. If yours isn't listed, paste the exact error in the video's comments and say whether you're on Windows or Mac.
+The traps in episode 2, part 1 come first, then the errors from moving an org you already have to this folder. Below them are episode 1's traps and the setup video's errors, because a new org from this folder runs the same steps. The setup video's messages were copied from a real terminal (Salesforce CLI 2.158.7); the ones new in this folder were copied from a real terminal too (Salesforce CLI 2.138.6), when this folder was tested in fresh scratch orgs. The video was made on a Mac. Nothing was tested on Windows, so a Windows message is described here, never quoted. If yours isn't listed, paste the exact error in the video's comments and say whether you're on Windows or Mac.
+
+## My deal says pounds now (or my $ turned into £)
+
+You changed **Currency Locale** on Company Information to **English (United Kingdom) - GBP**, as Owen does by mistake. Salesforce asked you to confirm with: "Changing your corporate currency changes only the currency symbol on all of your existing records; no conversion rates are applied."
+
+- **Why:** in an org with one currency, the Currency Locale only decides the symbol and the format. Nothing is converted: $50,000.00 becomes £50,000.00.
+- **Fix:** Setup, Quick Find `company`, Company Information, Edit, Currency Locale **English (United States) - USD**, Save. Do it **before** you tick Activate Multiple Currencies. That part of the video is watch-only.
+
+## I ticked Activate Multiple Currencies while the locale said pounds
+
+Every record you already had now starts in GBP, and GBP is your corporate currency, not USD.
+
+- **Why:** when you turn on multiple currencies, the Currency Locale becomes the corporate currency, and every existing record gets it.
+- **Fix:** multiple currencies can never be switched off, so start clean: delete this org (`sf org delete scratch --target-org kestrel --no-prompt`) and build a fresh one from this folder, which ends with USD as the corporate currency. At work this is why you test in a sandbox first.
+
+## There's no Opportunity Currency field
+
+The **New Opportunity** form has no **Opportunity Currency**, and amounts still show a $ sign instead of **USD**.
+
+- **Why:** multiple currencies aren't on yet. The tick didn't save, or you didn't deploy this folder.
+- **Fix:** Setup, Quick Find `company`, Company Information, Edit, tick **Activate Multiple Currencies**, Save. Or deploy this folder (`sf project deploy start`, or with `--ignore-conflicts` for the org you already have). Then reload the page.
+
+## British Pound isn't in the Opportunity Currency list
+
+The field is there, but it only offers **USD - U.S. Dollar**.
+
+- **Why:** a currency is only offered once it's added and active in Manage Currencies.
+- **Fix:** Setup, Quick Find `currencies`, Manage Currencies, New, Currency Type **GBP - British Pound**, Conversion Rate **0.79**, Save. Or deploy this folder: it adds GBP and EUR.
+
+## I added the wrong currency and there's no Delete
+
+Manage Currencies has no Delete for a currency.
+
+- **Why:** the New Currency page says so: "Note that you cannot delete a currency once you activate it."
+- **Fix:** click **Deactivate** next to it (in the Action column, beside Edit). It stays in the org, inactive, and nobody can pick it for a new record. Check the Currency Type before you save a new one.
+
+## The number in brackets is wrong
+
+Pennine Pumps shows something other than **GBP 10,000.00 (USD 12,658.23)**.
+
+- **Why:** the rate was typed differently, for example **7.9** instead of **0.79**. The bracket is 10,000 divided by the GBP rate.
+- **Fix:** Manage Currencies, click **Edit** next to GBP, set Conversion Rate to **0.79**, Save. The bracket changes at once, on every deal: a plain rate has no memory.
+
+## "Invalid field CurrencyIsoCode for Opportunity"
+
+The deals script fails with:
+
+```
+Error (executeRuntimeFailure): Execution failed at this code:
+
+System.SObjectException: Invalid field CurrencyIsoCode for Opportunity
+```
+
+- **Why:** you ran it before `sf project deploy start`. A deal's currency field exists only once multiple currencies are on, and the deploy turns them on.
+- **Fix:** run `sf project deploy start` (with `--ignore-conflicts` in the org you already have), then the script again. The failed run saved nothing.
+
+## "No account called Brookfield Water"
+
+Running the deals script fails with:
+
+```
+Error (executeRuntimeFailure): Execution failed at this code:
+
+System.IllegalArgumentException: No account called Brookfield Water. Load it first: sf data import tree --plan data/plan.json
+```
+
+- **Why:** the two deals belong to Brookfield Water, and your org doesn't have an account with that name. In a new org you skipped the load step, or ran the script before it.
+- **Fix:** run `sf data import tree --plan data/plan.json` once, then the script again. In the org you already have, check the account's name in **Accounts**: it must be exactly **Brookfield Water**.
+
+## "No default environment found" in the org you already have
+
+In this folder, `sf project deploy start --ignore-conflicts` (or any other command) fails with:
+
+```
+Error (NoDefaultEnvError): No default environment found. Use -o or --target-org to specify an environment.
+```
+
+- **Why:** `--set-default` saved your `kestrel` org as the default for the folder you created it from (`ep-01`, for example), and for that folder only. This folder has no default yet.
+- **Fix:** in this folder, run `sf config set target-org kestrel` once. Every command here then uses that org.
 
 ## My screen doesn't look like the video's tabs
 
@@ -35,7 +114,7 @@ Error (1): There are changes in the org that conflict with the local changes you
 ```
 
 - **Why:** the CLI tracks changes per folder. This folder has never seen your org, and the org already holds a `Kestrel_Practice` that another folder put there.
-- **Fix:** run `sf project deploy start --ignore-conflicts`, which tells the CLI to send this folder's files anyway. Or skip it: `ep-01` changes no metadata, so an org you finished `ep-00` and EP 1 in needs nothing deployed.
+- **Fix:** run `sf project deploy start --ignore-conflicts`, which tells the CLI to send this folder's files anyway. In `ep-02a` that's how the currency settings reach the org you already have.
 - A **fresh** scratch org made from this folder doesn't hit this.
 
 ## I have two Brookfield Water accounts
