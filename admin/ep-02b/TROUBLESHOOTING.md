@@ -1,61 +1,133 @@
-# Troubleshooting · ep-02a · Manchester wants pounds
+# Troubleshooting · ep-02b · While you're in there
 
-The traps in episode 2, part 1 come first, then the errors from moving an org you already have to this folder. Below them are episode 1's traps and the setup video's errors, because a new org from this folder runs the same steps. The setup video's messages were copied from a real terminal (Salesforce CLI 2.158.7); the ones new in this folder were copied from a real terminal too (Salesforce CLI 2.138.6), when this folder was tested in fresh scratch orgs. The video was made on a Mac. Nothing was tested on Windows, so a Windows message is described here, never quoted. If yours isn't listed, paste the exact error in the video's comments and say whether you're on Windows or Mac.
+The traps in episode 2, part 2 come first, then the errors from building this folder (the scripts, the time zone command, and moving an org you already have). Below them are episode 1's traps and the setup video's errors, because a new org from this folder runs the same steps. Part 1's currency traps are in [ep-02a's TROUBLESHOOTING.md](../ep-02a/TROUBLESHOOTING.md). The setup video's messages were copied from a real terminal (Salesforce CLI 2.158.7); the ones new in `ep-02a` and `ep-02b` were copied from a real terminal too (Salesforce CLI 2.138.6), when these folders were tested in fresh scratch orgs. The video was made on a Mac. Nothing was tested on Windows, so a Windows message is described here, never quoted. If yours isn't listed, paste the exact error in the video's comments and say whether you're on Windows or Mac.
 
-## My deal says pounds now (or my $ turned into £)
+## My own time zone still says Los Angeles
 
-You changed **Currency Locale** on Company Information to **English (United Kingdom) - GBP**, as Owen does by mistake. Salesforce asked you to confirm with: "Changing your corporate currency changes only the currency symbol on all of your existing records; no conversion rates are applied."
+You changed the company's Default Time Zone to Chicago, but your picture, Settings, Advanced User Details still says **(GMT-08:00) Pacific Standard Time (America/Los_Angeles)**.
 
-- **Why:** in an org with one currency, the Currency Locale only decides the symbol and the format. Nothing is converted: $50,000.00 becomes £50,000.00.
-- **Fix:** Setup, Quick Find `company`, Company Information, Edit, Currency Locale **English (United States) - USD**, Save. Do it **before** you tick Activate Multiple Currencies. That part of the video is watch-only.
+- **Why:** the company's default is only where **new** users start. Changing it later doesn't move anyone who already exists, you included.
+- **Fix:** on Advanced User Details, click **Edit**, set Time Zone to **(GMT-06:00) Central Standard Time (America/Chicago)**, Save. Or run `sf apex run --file scripts/add-users.apex`, which sets yours.
 
-## I ticked Activate Multiple Currencies while the locale said pounds
+## The time zone says Daylight, not Standard
 
-Every record you already had now starts in GBP, and GBP is your corporate currency, not USD.
+In summer the same choice reads **(GMT-05:00) Central Daylight Time (America/Chicago)**, and London reads British Summer Time. It's the same time zone: the label follows the date. What matters is the name in brackets, **America/Chicago**.
 
-- **Why:** when you turn on multiple currencies, the Currency Locale becomes the corporate currency, and every existing record gets it.
-- **Fix:** multiple currencies can never be switched off, so start clean: delete this org (`sf org delete scratch --target-org kestrel --no-prompt`) and build a fresh one from this folder, which ends with USD as the corporate currency. At work this is why you test in a sandbox first.
+## "Duplicate Username"
 
-## There's no Opportunity Currency field
+Saving Tom on the New User form fails with **Duplicate Username**. Salesforce's message goes on: "The username already exists in this or another Salesforce organization. Usernames must be unique across all Salesforce organizations. To resolve, use a different username (it doesn't need to match the user's email address)."
 
-The **New Opportunity** form has no **Opportunity Currency**, and amounts still show a $ sign instead of **USD**.
+- **Why:** a username must be unique across **every** Salesforce org in the world, not just yours. `tom.ashworth@example.com`, or the video's `tom.ashworth.4821@kestrel.example`, is taken.
+- **Fix:** add a number only you would pick before the `@`, for example `tom.ashworth.73519@kestrel.example`, and save again. The users script does this for you, and tries another number if one is taken.
 
-- **Why:** multiple currencies aren't on yet. The tick didn't save, or you didn't deploy this folder.
-- **Fix:** Setup, Quick Find `company`, Company Information, Edit, tick **Activate Multiple Currencies**, Save. Or deploy this folder (`sf project deploy start`, or with `--ignore-conflicts` for the org you already have). Then reload the page.
+## There's no Salesforce Platform license in the list
 
-## British Pound isn't in the Opportunity Currency list
+The **User License** list on the New User form offers Chatter External, Chatter Free, Company Communities, Identity, **Salesforce** and Salesforce Integration, and no **Salesforce Platform**.
 
-The field is there, but it only offers **USD - U.S. Dollar**.
+- **Why:** the list shows only licenses with seats left, and an Enterprise Edition scratch org has no Salesforce Platform licenses at all. The video teaches Salesforce Platform as exam knowledge only.
+- **Fix:** none needed. Pick **Salesforce** for Tom and Lena.
 
-- **Why:** a currency is only offered once it's added and active in Manage Currencies.
-- **Fix:** Setup, Quick Find `currencies`, Manage Currencies, New, Currency Type **GBP - British Pound**, Conversion Rate **0.79**, Save. Or deploy this folder: it adds GBP and EUR.
+## "Not enough Salesforce licenses"
 
-## I added the wrong currency and there's no Delete
+The users script stops, and its message starts with `System.IllegalArgumentException: Not enough Salesforce licenses:`, then how many are left and how many it needs.
 
-Manage Currencies has no Delete for a currency.
+- **Why:** your org has 5 Salesforce licenses. You, Tom and Lena use 3. Extra users you made while practising use the rest.
+- **Fix:** Setup, Users, open a practice user you don't need, Edit, untick **Active**, Save. A deactivated user frees their license. Then run the script again.
 
-- **Why:** the New Currency page says so: "Note that you cannot delete a currency once you activate it."
-- **Fix:** click **Deactivate** next to it (in the Action column, beside Edit). It stays in the org, inactive, and nobody can pick it for a new record. Check the Currency Type before you save a new one.
+## There's no Login link next to my users
 
-## The number in brackets is wrong
+The Users list has no **Login** link next to Tom or Lena.
 
-Pennine Pumps shows something other than **GBP 10,000.00 (USD 12,658.23)**.
+- **Why:** **Administrators Can Log in as Any User** is off. A new org starts with it off.
+- **Fix:** Setup, Quick Find `login access`, Login Access Policies, tick **Administrators Can Log in as Any User**, Save. Or deploy this folder: `settings/Security.settings-meta.xml` turns it on. Then reload the Users list.
 
-- **Why:** the rate was typed differently, for example **7.9** instead of **0.79**. The bracket is 10,000 divided by the GBP rate.
-- **Fix:** Manage Currencies, click **Edit** next to GBP, set Conversion Rate to **0.79**, Save. The bracket changes at once, on every deal: a plain rate has no memory.
+## Logged in as Tom, I can't see Danny's deal
 
-## "Invalid field CurrencyIsoCode for Opportunity"
+As Tom, Opportunities is empty, and searching for `Brookfield` finds nothing.
 
-The deals script fails with:
+- **Why:** a new Enterprise Edition org starts Account and Opportunity sharing at **Private**: each person sees only the records they own, and Danny's deal is yours (Owen's). Our org was changed off screen before recording (see the README's sharing note). Sharing is taught in a later episode.
+- **Fix:** log out as Tom. Setup, Quick Find `sharing`, Sharing Settings, Edit. Set **Account** to **Public Read Only**, then **Opportunity** to **Public Read Only**, Save. Salesforce won't take Opportunity Public Read Only while Account is still Private, so set Account first, or both at once. Or deploy this folder: it sets both. Wait a minute while Salesforce recalculates sharing, then log in as Tom again.
+
+## Danny's deal shows dollars, with no pounds in brackets
+
+As Tom, the deal reads **USD 50,000.00** and nothing in brackets.
+
+- **Why:** Tom's own Currency isn't GBP, so there's nothing to convert to. The brackets show the currency of whoever is looking.
+- **Fix:** log out as Tom. Setup, Users, Tom Ashworth, Edit, Currency **GBP - British Pound**, Save.
+
+## The Default business hours still say Pacific
+
+Business Hours lists **Default** with **(GMT-08:00) Pacific Standard Time (America/Los_Angeles)**.
+
+- **Why:** Default is a separate record from Manchester Support Hours. Episode 2 doesn't change it, and neither does changing the company's time zone.
+- **Fix:** none needed. Manchester Support Hours has its own time zone, Europe/London.
+
+## I can't delete business hours
+
+There's no Delete for business hours.
+
+- **Why:** Salesforce doesn't let you delete business hours, only deactivate them.
+- **Fix:** made one with the wrong name? Edit it and fix the name, or untick **Active**. Check the name before you save a new one. This is why the video tells you to check first.
+
+## The holiday doesn't stop Manchester's clock
+
+Spring Bank Holiday is there, but its **Business Hours** list is empty.
+
+- **Why:** a holiday counts only for the business hours it's linked to. Not linked, not counted.
+- **Fix:** open the holiday, under Business Hours click **Add/Remove**, move **Manchester Support Hours** to the selected list, Save.
+
+## Tom and Lena got no welcome email
+
+Nothing arrived, and nothing will.
+
+- **Why:** their emails are made up. `example.com` is reserved for examples, so no mail reaches a real person. The users script also sends no welcome email.
+- **Fix:** none needed. You test as Tom with the **Login** link in the Users list, which needs no password.
+
+## "No matching record found" when setting the time zone
+
+`sf data update record --sobject Organization ...` fails with:
+
+```
+Updating Record... Error
+Error (DataRecordGetNoRecord): No matching record found.
+```
+
+- **Why:** the command looks for the Organization record whose name is exactly `Kestrel Industrial`, and yours has another name. You renamed the org in Company Information, or typed the name differently.
+- **Fix:** check the name on Company Information and put that name between the single quotes. Or do the clicks: Company Information, Edit, Default Time Zone, Save.
+
+## "bad value for restricted picklist field"
+
+`sf data update record --sobject Organization ...` fails with something like:
+
+```
+Updating Record... Failed
+Error (1): Time Zone: bad value for restricted picklist field: America/Chicag
+```
+
+- **Why:** the time zone's name has a typo. Salesforce accepts only its own list of names.
+- **Fix:** copy the command again: the value is exactly `TimeZoneSidKey=America/Chicago`.
+
+## "Must have at least one default business hours."
+
+Deploying fails on `BusinessHours` (type `Settings`) with the problem `Must have at least one default business hours.`
+
+- **Why:** you edited `settings/BusinessHours.settings-meta.xml` and removed the **Default** entry. Salesforce wants the default business hours listed in that file whenever it's deployed. We hit this ourselves while building the folder.
+- **Fix:** put the Default entry back (it's in this folder on GitHub). Nothing was saved: a failed deploy changes nothing.
+
+## "Invalid field DefaultCurrencyIsoCode for User" or "Invalid field CurrencyIsoCode for Opportunity"
+
+The users script fails with:
 
 ```
 Error (executeRuntimeFailure): Execution failed at this code:
 
-System.SObjectException: Invalid field CurrencyIsoCode for Opportunity
+System.SObjectException: Invalid field DefaultCurrencyIsoCode for User
 ```
 
-- **Why:** you ran it before `sf project deploy start`. A deal's currency field exists only once multiple currencies are on, and the deploy turns them on.
-- **Fix:** run `sf project deploy start` (with `--ignore-conflicts` in the org you already have), then the script again. The failed run saved nothing.
+or the deals script with `System.SObjectException: Invalid field CurrencyIsoCode for Opportunity`.
+
+- **Why:** you ran the script before `sf project deploy start`. Those fields exist only once multiple currencies are on, and the deploy turns them on.
+- **Fix:** run `sf project deploy start` (with `--ignore-conflicts` in the org you already have), then the script again. Nothing was saved by the failed run: your time zone too is as it was.
 
 ## "No account called Brookfield Water"
 
@@ -78,7 +150,7 @@ In this folder, `sf project deploy start --ignore-conflicts` (or any other comma
 Error (NoDefaultEnvError): No default environment found. Use -o or --target-org to specify an environment.
 ```
 
-- **Why:** `--set-default` saved your `kestrel` org as the default for the folder you created it from (`ep-01`, for example), and for that folder only. This folder has no default yet.
+- **Why:** `--set-default` saved your `kestrel` org as the default for the folder you created it from (`ep-01` or `ep-02a`, for example), and for that folder only. This folder has no default yet.
 - **Fix:** in this folder, run `sf config set target-org kestrel` once. Every command here then uses that org.
 
 ## My screen doesn't look like the video's tabs
@@ -99,11 +171,11 @@ Salesforce makes that account itself in every new org, even with sample data off
 
 ## The license numbers don't match the video
 
-The video shows **Developer Edition** and **Salesforce: 2 total, 1 used** (Setup, Company Information, User Licenses). Your org is **Enterprise Edition** from this definition file, so it shows **Salesforce: 5 total, 1 used**. That's expected: we switched so more full users fit later. The used count goes up when you add users.
+Episode 1's video shows **Developer Edition** and **Salesforce: 2 total, 1 used** (Setup, Company Information, User Licenses). Your org is **Enterprise Edition** from this definition file, like episode 2's video, so after episode 2 it shows **Salesforce: 5 total, 3 used**: you, Tom and Lena. Each user you add takes one more.
 
-## The Users list has four users, not just me
+## The Users list has more users than Tom, Lena and me
 
-Setup, then Users, lists **Chatter Expert**, **Integration User**, **Security User** and you. The other three are made by Salesforce, and none of them uses one of your Salesforce licenses. Don't deactivate them.
+Setup, then Users, also lists **Chatter Expert**, **Integration User** and **Security User**. Salesforce makes them itself, and none of them uses one of your Salesforce licenses. Don't deactivate them.
 
 ## "There are changes in the org that conflict with the local changes you're trying to deploy"
 
@@ -114,7 +186,7 @@ Error (1): There are changes in the org that conflict with the local changes you
 ```
 
 - **Why:** the CLI tracks changes per folder. This folder has never seen your org, and the org already holds a `Kestrel_Practice` that another folder put there.
-- **Fix:** run `sf project deploy start --ignore-conflicts`, which tells the CLI to send this folder's files anyway. In `ep-02a` that's how the currency settings reach the org you already have.
+- **Fix:** run `sf project deploy start --ignore-conflicts`, which tells the CLI to send this folder's files anyway. In `ep-02b` that's how the fiscal year, the login policy, the business hours and the sharing reach the org you already have.
 - A **fresh** scratch org made from this folder doesn't hit this.
 
 ## I have two Brookfield Water accounts

@@ -11,6 +11,7 @@ Each folder is Kestrel's practice org **at the end of one episode**, as a comple
 | [ep-00](ep-00/) | Kestrel's empty org: the scratch definition and the `Kestrel_Practice` permission set, nothing an episode adds | The setup video: your own free practice org |
 | [ep-01](ep-01/) | Same metadata as `ep-00`, plus the account Brookfield Water (in `data/`) and a script that renames you to Owen Hartley | Episode 1: You're the Salesforce guy now |
 | [ep-02a](ep-02a/) | Multiple currencies on (USD corporate, GBP 0.79, EUR 0.92, in `settings/`), plus a script that adds two deals to Brookfield Water | Episode 2, part 1: Manchester wants pounds |
+| [ep-02b](ep-02b/) | Fiscal year from April, the login access policy, Manchester Support Hours and a holiday, and Account and Opportunity sharing Public Read Only (in `settings/` and `objects/`), plus a script that adds Tom and Lena and sets your time zone, and one command for the company's time zone | Episode 2, part 2: While you're in there |
 
 More folders are added as each episode is recorded. Episode 2 comes in two parts, so it has two folders, `ep-02a` and `ep-02b`.
 
