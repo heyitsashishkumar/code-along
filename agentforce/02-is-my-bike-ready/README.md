@@ -91,7 +91,7 @@ The agent can only look up what exists, so you start with the repair orders. An 
 
    **Display Format** and **Starting Number** appear once you choose Auto Number. The API name fills itself: `Repair_Order__c`.
 3. Tick **Launch New Custom Tab Wizard after saving this custom object**. Click **Save**.
-4. The tab wizard opens. Pick any tab style: it's only the tab's icon. The video jokes that there's a bicycle, but we couldn't find one in Salesforce's list of tab styles. Pick the **Motorcycle**, or anything you like. Click **Next**, **Next**, then **Save**.
+4. The tab wizard opens. Pick any tab style: it's only the tab's icon. Salesforce's list of tab styles has no bicycle, so in the video we took **Laptop**. Take it too, or anything you like. Click **Next**, **Next**, then **Save**.
 5. On the object, open **Fields & Relationships** and click **New**. Make four fields, one at a time:
 
    | Field Label | Data Type | Length | Field Name (fills itself) |
