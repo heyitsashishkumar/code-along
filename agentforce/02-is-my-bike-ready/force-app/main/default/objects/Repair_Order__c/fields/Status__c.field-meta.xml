@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Where the repair is now.</description>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Received</fullName>
+                <default>true</default>
+                <label>Received</label>
+            </value>
+            <value>
+                <fullName>In Repair</fullName>
+                <default>false</default>
+                <label>In Repair</label>
+            </value>
+            <value>
+                <fullName>Waiting for Parts</fullName>
+                <default>false</default>
+                <label>Waiting for Parts</label>
+            </value>
+            <value>
+                <fullName>Ready for Pickup</fullName>
+                <default>false</default>
+                <label>Ready for Pickup</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

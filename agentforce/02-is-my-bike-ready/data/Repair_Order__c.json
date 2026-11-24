@@ -1,0 +1,44 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Repair_Order__c",
+                "referenceId": "Repair_Order__cRef1"
+            },
+            "Customer_Name__c": "Sam Visser",
+            "Bike__c": "Blue city bike",
+            "Status__c": "Ready for Pickup",
+            "Ready_Time__c": "Today, 10 am"
+        },
+        {
+            "attributes": {
+                "type": "Repair_Order__c",
+                "referenceId": "Repair_Order__cRef2"
+            },
+            "Customer_Name__c": "Sam Bakker",
+            "Bike__c": "Red road bike",
+            "Status__c": "In Repair",
+            "Ready_Time__c": "Tomorrow, 5 pm"
+        },
+        {
+            "attributes": {
+                "type": "Repair_Order__c",
+                "referenceId": "Repair_Order__cRef3"
+            },
+            "Customer_Name__c": "Anouk de Jong",
+            "Bike__c": "Cargo bike with a child seat",
+            "Status__c": "Waiting for Parts",
+            "Ready_Time__c": "Friday"
+        },
+        {
+            "attributes": {
+                "type": "Repair_Order__c",
+                "referenceId": "Repair_Order__cRef4"
+            },
+            "Customer_Name__c": "Daan Smit",
+            "Bike__c": "Black folding bike",
+            "Status__c": "Received",
+            "Ready_Time__c": "Not set yet"
+        }
+    ]
+}

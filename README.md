@@ -91,6 +91,7 @@ Each folder is Kestrel Industrial's practice org **at the end of one episode**, 
 | Video | What you build | Folder |
 |---|---|---|
 | 1 | Build your first Agentforce agent: **Bit**, an Employee agent from the Agentforce Employee Agent template. A look inside Agentforce Builder, a test in Preview, and an "always" line in the system instructions that breaks every answer, then the fix (`Bit_1.agent`) | [agentforce/01-build-your-first-agent](agentforce/01-build-your-first-agent/) |
+| 2 | Is my bike ready? A custom subagent and a flow action: a Repair Order object with four records, the `Get_Repair_Status` flow, and **Spoke**, a Service agent with the custom subagent Repair Status and its custom action. Then the read-only permission set its user needs, and one sentence that fixes a wrong job | [agentforce/02-is-my-bike-ready](agentforce/02-is-my-bike-ready/) |
 
 ## How to use it with the playlists
 

@@ -9,10 +9,11 @@ Each folder is what one video builds, **at the end of that video**, as a complet
 | Folder | What it holds | Video |
 |---|---|---|
 | [01-build-your-first-agent](01-build-your-first-agent/) | **Bit**, an Employee agent from the Agentforce Employee Agent template, with one line added to its system instructions | Video 1: Build your first Agentforce agent |
+| [02-is-my-bike-ready](02-is-my-bike-ready/) | The Repair Order object and its four records, the `Get_Repair_Status` flow, **Spoke** (a Service agent with the custom subagent Repair Status and its action), and the read-only permission set for Spoke's user | Video 2: Is my bike ready? A custom subagent and a flow action |
 
 More folders are added as each video is published.
 
-**Each video stands on its own.** Unlike The Accidental Admin, video N doesn't start from folder N-1: the next video makes a new agent and doesn't need Bit. The steps in each video build everything that video needs.
+**Each video stands on its own.** Unlike The Accidental Admin, video N doesn't start from folder N-1: video 2 makes a new agent and doesn't need Bit. The steps in each video build everything that video needs.
 
 ## What you need
 
