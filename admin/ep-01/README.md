@@ -24,7 +24,7 @@ ep-01/
 
 ## See the changes on GitHub
 
-This folder was added in two commits: a plain copy of `ep-00` (`copy ep-00 to ep-01`), then the episode's changes (`EP 1: ...`). Open the [history of this folder](https://github.com/heyitsashishkumar/code-along/commits/main/admin/ep-01) and click the newest commit: its page shows exactly what EP 1 changed, green lines added.
+This folder was added in two commits: a plain copy of `ep-00` (`copy ep-00 to ep-01`), then the episode's changes. Open EP 1's commit, [EP 1: Brookfield Water in data/, rename-admin-user script, README and troubleshooting](https://github.com/heyitsashishkumar/code-along/commit/043bc321f2cf2162f71012c0fc0a36b135a27efe): its page shows exactly what EP 1 changed, green lines added. (Later commits in the [folder's history](https://github.com/heyitsashishkumar/code-along/commits/main/admin/ep-01) are fixes to the docs and the definition, not the episode.)
 
 To compare on your own computer: `git diff --no-index admin/ep-00 admin/ep-01`.
 
@@ -35,7 +35,7 @@ Do the one-time setup from the setup video first (Dev Hub, the CLI, `sf org logi
 **Two paths. Pick one.**
 
 - **A new org:** create it from this folder, then deploy, assign, load and rename, as below.
-- **The org you already have** (from an earlier folder): go into this folder and run `sf project deploy start --ignore-conflicts`. Then load data and run scripts **only** if this folder's README says they're new in this episode (in `ep-01`, that's the data and the rename script, and they're new). Each folder is its own project, so the CLI sees the org's earlier deploy as someone else's change. Without `--ignore-conflicts`, deploy stops with a `Conflict` error (see TROUBLESHOOTING.md).
+- **The org you already have** (from an earlier folder): go into this folder, run `sf config set target-org kestrel` (the default org is saved per folder, so this folder doesn't know it yet), then `sf project deploy start --ignore-conflicts`. Then load data and run scripts **only** if this folder's README says they're new in this episode (in `ep-01`, that's the data and the rename script, and they're new). Each folder is its own project, so the CLI sees the org's earlier deploy as someone else's change. Without `--ignore-conflicts`, deploy stops with a `Conflict` error (see TROUBLESHOOTING.md).
 
 For a **new org**, from this folder:
 
@@ -55,7 +55,7 @@ Already finished EP 1 in your own org? You don't need to run anything here.
 
 ## What you should see
 
-- **Accounts** lists **Brookfield Water** (phone (312) 555-0142) and **Sample Account for Entitlements**, which Salesforce makes itself.
+- **Accounts** has **Brookfield Water** (phone (312) 555-0142) and **Sample Account for Entitlements**, which Salesforce makes itself. In a brand-new org there's no **All Accounts** list to choose yet: search for each by name (for example `Sample`).
 - **The user menu** says **Owen Hartley**, with the **System Administrator** profile.
 - **Setup, Quick Find `Company Information`:** the organization name says **Kestrel Industrial**, and the edition says **Enterprise Edition**. The user licenses show **Salesforce: 5 total, 1 used** (the video says 2 total: see the edition note at the top).
 - **Setup, Users:** four users: Chatter Expert, Integration User, Security User, and you.

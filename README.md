@@ -2,9 +2,8 @@
 
 The code from the **Freestyle Cyber Hub** code-along playlists, one folder per video. Each folder holds the project exactly as it is at the end of its video, so you can check your work against it, or start the next video from it.
 
-Today that's two companion playlists that build **Sharma Traders' customer desk** together from zero, a third series that teaches the platform administrator's job, and a fourth that builds AI agents:
-- **LWC from Zero: Code Along** (`lwc/`) — the front-end Lightning Web Components, one piece at a time.
-- **Apex from Zero: Code Along** (`apex/`) — the Salesforce backend classes, SOQL queries, controllers, unit tests, and triggers that power the desk.
+Today that's [**LWC & Apex from Zero: Code Along**](https://www.youtube.com/playlist?list=PLX5cm-QNXr8k) (one playlist that builds **Sharma Traders' customer desk** end to end from zero, starting with LWC #1), plus the platform administrator and Agentforce series:
+- **LWC & Apex from Zero: Code Along** ([playlist](https://www.youtube.com/playlist?list=PLX5cm-QNXr8k)) — the front-end Lightning Web Components (`lwc/`, plus [**LWC in 60 Seconds**](https://www.youtube.com/playlist?list=PLWHg6Q9MtOE4)) and the Salesforce backend classes, SOQL queries, controllers, unit tests, triggers, and async jobs (`apex/`, plus [**Apex in 60 Seconds**](https://www.youtube.com/playlist?list=PLEZlgyJjsy4I)) that power the desk.
 - **The Accidental Admin** (`admin/`) — the Salesforce admin series: Kestrel Industrial's practice org, one folder per episode, that you build in a free scratch org of your own.
 - **Agentforce from Zero: Build Along (Specialist Exam Prep)** (`agentforce/`) — Agentforce agents you build by clicking, in a free Developer Edition org of your own, following the Agentforce Specialist exam.
 
@@ -82,6 +81,8 @@ Each folder is Kestrel Industrial's practice org **at the end of one episode**, 
 |---|---|---|
 | Before episode 1 | Set up your own free practice org: Dev Hub, the Salesforce CLI, a scratch org from `config/project-scratch-def.json`, and the `Kestrel_Practice` permission set | [admin/ep-00](admin/ep-00/) |
 | Episode 1: You're the Salesforce guy now. Same metadata as `ep-00`, plus the account Brookfield Water and a script that renames you to Owen Hartley | [admin/ep-01](admin/ep-01/) |
+| Episode 2, part 1: Manchester wants pounds. Multiple currencies on (USD corporate, GBP and EUR), plus a script that adds two deals to Brookfield Water | [admin/ep-02a](admin/ep-02a/) |
+| Episode 2, part 2: While you're in there. Fiscal year from April, login as any user, Manchester Support Hours and a holiday, Account and Opportunity sharing Public Read Only, plus a script that adds Tom and Lena, and the company's time zone set to Chicago | [admin/ep-02b](admin/ep-02b/) |
 
 ## Agentforce from Zero (`agentforce/`)
 
